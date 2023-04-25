@@ -1,51 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
+    <Filter Include="STL공부자료">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="소스 파일\4월">
+    <Filter Include="STL공부자료\4월">
       <UniqueIdentifier>{dbbd71fe-bb0b-4ce3-89b1-bd561958851a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tool">
+      <UniqueIdentifier>{72de0b10-0f9a-4b46-865a-a4eff492545d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tool\Save">
+      <UniqueIdentifier>{2ae4fc9f-207b-41dd-ad65-301e615c6fec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tool\String">
+      <UniqueIdentifier>{33031e70-177f-4ce4-ace9-7c776a4551e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stduy_Test">
+      <UniqueIdentifier>{05bafe85-c975-4f06-80fa-0573b54928e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="중간고사_준비">
+      <UniqueIdentifier>{7542f0ce-2a94-4b5d-8799-39cd6cc892f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tool\Dog">
+      <UniqueIdentifier>{8b3e61e3-3f56-414d-a32b-7ebf63521d12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STL.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>STL공부자료</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="5주차 자료\5주차_1.cpp">
+      <Filter>STL공부자료\4월</Filter>
+    </ClCompile>
+    <ClCompile Include="5주차 자료\5주차_2.cpp">
+      <Filter>STL공부자료\4월</Filter>
+    </ClCompile>
+    <ClCompile Include="6주차 자료\6주차_1.cpp">
+      <Filter>STL공부자료\4월</Filter>
+    </ClCompile>
+    <ClCompile Include="6주차 자료\6주차_2.cpp">
+      <Filter>STL공부자료\4월</Filter>
+    </ClCompile>
+    <ClCompile Include="7주차 자료\7주차_2.cpp">
+      <Filter>STL공부자료\4월</Filter>
     </ClCompile>
     <ClCompile Include="save.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Study.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="5주차_1.cpp">
-      <Filter>소스 파일\4월</Filter>
+      <Filter>Tool\Save</Filter>
     </ClCompile>
     <ClCompile Include="String.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Tool\String</Filter>
     </ClCompile>
-    <ClCompile Include="5주차_2.cpp">
-      <Filter>소스 파일\4월</Filter>
+    <ClCompile Include="Study.cpp">
+      <Filter>Stduy_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Stduy_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="8주차 자료\8주차_1.cpp">
+      <Filter>STL공부자료\4월</Filter>
+    </ClCompile>
+    <ClCompile Include="Middle_Test.cpp">
+      <Filter>중간고사_준비</Filter>
+    </ClCompile>
+    <ClCompile Include="Tool.cpp">
+      <Filter>Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="Dog.cpp">
+      <Filter>Tool\Dog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="save.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Tool\Save</Filter>
     </ClInclude>
     <ClInclude Include="String.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Tool\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool.h">
+      <Filter>Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Dog.h">
+      <Filter>Tool\Dog</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

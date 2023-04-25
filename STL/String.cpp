@@ -55,7 +55,7 @@ String& String::operator=(const String& other)
 }
 
 // 이동생성자  
-String::String(String&& other)
+String::String(String&& other) noexcept
 {		// && - r_Value Reference  
 	len = other.len;
 	p = other.p;
@@ -70,7 +70,7 @@ String::String(String&& other)
 }
 
 // 이동 할당 연산자 
-String& String::operator=(String&& other)
+String& String::operator=(String&& other) noexcept
 {
 	if (this == &other)
 		return *this;
@@ -125,4 +125,17 @@ void String::print(const char* msg)
 		std::cout << "[" << id << "] - " << msg << ", 개수:" << len
 			<< ", 주소:" << (void*)p << std::endl; // 형변환 해야한다. 
 	}
+}
+
+bool String::operator==(const String& rhs) const
+{
+	/** [version 1] **/
+	//if (len != rhs.len) {
+	//   return false;
+	//}
+	//return std::equal(p, p + len, rhs.p); // #include <algorithm>
+
+	/** [version 2] **/
+	// 문자열의 길이 정보를 함께 사용
+	return std::equal(p, p + len, rhs.p, rhs.p + rhs.len);
 }

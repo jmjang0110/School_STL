@@ -1,0 +1,79 @@
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// v 의 메모리가 연속되어 있는지 확인하려면?
+	if (v.data() == &v[0])
+		cout << "두 주소가 같다." << endl;
+
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/vector.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// v 의 메모리가 연속되어 있는지 확인하려면?
+	if (v.data() == &v[0])
+		cout << "두 주소가 같다." << endl;
+
+	for (int i = 0; i < v.size(); ++i) {
+		cout << addressof(v[i]) << endl;
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/vector.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif

@@ -1,0 +1,1933 @@
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// [ 문제 ] v에서 "3"을 제거하라.
+// 빨간 줄 = intelisense
+// 
+//				   STL
+//			  /		|	   \
+//       /			|			\
+// Container	Iterator	Algorithm
+// 
+// STL = Container, Iterator, Algorithm => Container와 Algorithm사이 벽을 친다.
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+int main()
+{
+	vector<String> v{ "1", "2", "3", "4", "5" };
+
+	// erase 함수에서 String(const char*) 생성자 확인 "3" => 메모리에 생성
+	// erase 함수 내 remove 알고리즘에서 인자의 begin()~end()까지 같은 객체를 찾아 지우려고 시도
+	//erase(v, "3");
+
+	for (String& s : v) {
+		cout << s << ' ';
+	}
+	cout << endl;
+
+
+	MySaveFileCode::Save_File_Auto(7, 2);
+
+
+
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// [ 문제 ] v에서 "3"을 제거하라.
+// 빨간 줄 = intelisense
+// 
+//				   STL
+//			  /		|	   \
+//       /			|			\
+// Container	Iterator	Algorithm
+// 
+// STL = Container, Iterator, Algorithm => Container와 Algorithm사이 벽을 친다.
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+int main()
+{
+	vector<String> v{ "1", "2", "3", "4", "5" };
+
+	// erase 함수에서 String(const char*) 생성자 확인 "3" => 메모리에 생성
+	// erase 함수 내 remove 알고리즘에서 인자의 begin()~end()까지 같은 객체를 찾아 지우려고 시도
+	//erase(v, "3");
+
+	for (String& s : v) {
+		cout << s << ' ';
+	}
+	cout << endl;
+
+
+	MySaveFileCode::Save_File_Auto(7, 2);
+
+
+
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// [ 문제 ] v에서 "3"을 제거하라.
+// 빨간 줄 = intelisense
+// 
+//				   STL
+//			  /		|	   \
+//       /			|			\
+// Container	Iterator	Algorithm
+// 
+// STL = Container, Iterator, Algorithm => Container와 Algorithm사이 벽을 친다.
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+int main()
+{
+	vector<String> v{ "1", "2", "3", "4", "5" };
+
+	// erase 함수에서 String(const char*) 생성자 확인 "3" => 메모리에 생성
+	// erase 함수 내 remove 알고리즘에서 인자의 begin()~end()까지 같은 객체를 찾아 지우려고 시도
+	//erase(v, "3");
+
+	for (String& s : v) {
+		cout << s << ' ';
+	}
+	cout << endl;
+
+
+	MySaveFileCode::Save_File_Auto(7, 2);
+
+
+
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// [ 문제 ] v에서 "3"을 제거하라.
+// 빨간 줄 = intelisense
+// 
+//				   STL
+//			  /		|	   \
+//       /			|			\
+// Container	Iterator	Algorithm
+// 
+// STL = Container, Iterator, Algorithm => Container와 Algorithm사이 벽을 친다.
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+int main()
+{
+	vector<String> v{ "1", "2", "3", "4", "5" };
+
+	// erase 함수에서 String(const char*) 생성자 확인 "3" => 메모리에 생성
+	// erase 함수 내 remove 알고리즘에서 인자의 begin()~end()까지 같은 객체를 찾아 지우려고 시도
+	//erase(v, "3");
+
+	for (String& s : v) {
+		cout << s << ' ';
+	}
+	cout << endl;
+
+
+	MySaveFileCode::Save_File_Auto(7, 2);
+
+
+
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// [ 문제 ] v에서 "3"을 제거하라.
+// 빨간 줄 = intelisense
+// 
+//				   STL
+//			  /		|	   \
+//       /			|			\
+// Container	Iterator	Algorithm
+// 
+// STL = Container, Iterator, Algorithm => Container와 Algorithm사이 벽을 친다.
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+int main()
+{
+	vector<String> v{ "1", "2", "3", "4", "5" };
+
+	// erase 함수에서 String(const char*) 생성자 확인 "3" => 메모리에 생성
+	// erase 함수 내 remove 알고리즘에서 인자의 begin()~end()까지 같은 객체를 찾아 지우려고 시도
+	//erase(v, "3");
+
+	for (String& s : v) {
+		cout << s << ' ';
+	}
+	cout << endl;
+
+
+	MySaveFileCode::Save_File_Auto(7, 2);
+
+
+
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// [ 문제 ] v에서 "3"을 제거하라.
+// 빨간 줄 = intelisense
+// 
+//				   STL
+//			  /		|	   \
+//       /			|			\
+// Container	Iterator	Algorithm
+// 
+// STL = Container, Iterator, Algorithm => Container와 Algorithm사이 벽을 친다.
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+int main()
+{
+	vector<String> v{ "1", "2", "3", "4", "5" };
+
+	// erase 함수에서 String(const char*) 생성자 확인 "3" => 메모리에 생성
+	// erase 함수 내 remove 알고리즘에서 인자의 begin()~end()까지 같은 객체를 찾아 지우려고 시도
+	erase(v, "3");
+
+	for (String& s : v) {
+		cout << s << ' ';
+	}
+	cout << endl;
+
+
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	deque<String> d{ "1", "2", "3" };
+
+	vector<String> v{ "1", "2", "3" };
+	
+	관찰 = true;
+	// v앞에 "0"을 추가하라 
+	v.insert(v.begin(), "0");
+	for (String& s : v)
+		cout << s << " ";
+
+	cout << endl;
+
+	관찰 = false;
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	deque<String> d{ "1", "2", "3" };
+
+	vector<String> v{ "1", "2", "3" };
+	
+	관찰 = true;
+	// v앞에 "0"을 추가하라 
+	//v.insert(v.begin(), "0");
+	v.emplace(v.begin(), "0");
+
+	for (String& s : v)
+		cout << s << " ";
+
+	cout << endl;
+
+	관찰 = false;
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	deque<String> d{ "1", "2", "3" };
+
+	vector<String> v{ "1", "2", "3" };
+	
+	관찰 = true;
+	// v앞에 "0"을 추가하라 
+	//v.insert(v.begin(), "0");
+	v.emplace(v.begin(), "0");
+	d.emplace(d.begin(), "0");
+
+	for (String& s : v)
+		cout << s << " ";
+
+	cout << endl;
+
+	관찰 = false;
+
+	for (int i = 0; i < d.size(); ++i) 
+		cout << d[i] << " ";
+	cout << endl;
+
+	
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	deque<String> d{ "1", "2", "3" };
+
+	vector<String> v{ "1", "2", "3" };
+	
+	관찰 = true;
+	// v앞에 "0"을 추가하라 
+	//v.insert(v.begin(), "0");
+	//v.emplace(v.begin(), "0");
+	d.emplace(d.begin(), "0");
+
+	for (String& s : v)
+		cout << s << " ";
+
+	cout << endl;
+
+	관찰 = false;
+
+	for (int i = 0; i < d.size(); ++i) 
+		cout << d[i] << " ";
+	cout << endl;
+
+	
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	deque<String> d{ "1", "2", "3" };
+
+	vector<String> v{ "1", "2", "3" };
+	
+	관찰 = true;
+	// v앞에 "0"을 추가하라 
+	//v.insert(v.begin(), "0");
+	//v.emplace(v.begin(), "0");
+	d.emplace(d.begin(), "0");
+	//d.emplace_front(d.begin(), "0");
+
+	for (String& s : v)
+		cout << s << " ";
+
+	cout << endl;
+
+	관찰 = false;
+
+	for (int i = 0; i < d.size(); ++i) 
+		cout << d[i] << " ";
+	cout << endl;
+
+	
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// v 의 메모리가 연속되어 있는지 확인하려면?
+	for (int i = 0; i < v.size(); ++i) {
+		cout << &v[i] << endl;
+
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// v 의 메모리가 연속되어 있는지 확인하려면?
+	cout << sizeof(v[0]);
+	for (int i = 0; i < v.size(); ++i) {
+		cout << &v[i] << endl;
+
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// v 의 메모리가 연속되어 있는지 확인하려면?
+	for (int i = 0; i < v.size(); ++i) {
+		cout << &v[i] << endl;
+		cout << addressof(v[i]);
+
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// v 의 메모리가 연속되어 있는지 확인하려면?
+	if (v.data() == &v[0])
+		cout << "두 주소가 같다." << endl;
+
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/vector.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// v 의 메모리가 연속되어 있는지 확인하려면?
+	if (v.data() == &v[0])
+		cout << "두 주소가 같다." << endl;
+
+	for (int i = 0; i < v.size(); ++i) {
+		cout << addressof(v[i]) << endl;
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/vector.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// v 의 메모리가 연속되어 있는지 확인하려면?
+	if (v.data() == &v[0])
+		cout << "두 주소가 같다." << endl;
+
+	for (int i = 0; i < v.size(); ++i) {
+		cout << addressof(v[i]) << endl;
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+	deque<int> d{ 1,2,3,4,5,6,7,8,9,10 };
+
+	for (int i = 0; i < v.size(); ++i) {
+		cout << addressof(d[i]) << endl;
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+	deque<int> d{ 1,2,3,4,5,6,7,8,9,10 };
+
+	/*
+		deque 는 4개씩 메모리가 끊어져 연결되어 있다 ( visual studio ) 
+		[1][2][3][4] <------> [5][6][7][8] <----> [9][10]
+	*/
+
+	d.push_front(0);
+	d.push_back(11);
+
+	for (int i = 0; i < v.size(); ++i) {
+		cout << addressof(d[i]) << endl;
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// 벡터의 메모리는 contiguous ?  
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+	deque<int> d{ 1,2,3,4,5,6,7,8,9,10 };
+
+	/*
+		deque 는 4개씩 메모리가 끊어져 연결되어 있다 ( visual studio ) 
+		[1][2][3][4] <------> [5][6][7][8] <----> [9][10]
+	*/
+
+
+
+	for (int i = 0; i < v.size(); ++i) {
+		cout << addressof(d[i]) << endl;
+	}
+
+	cout << endl << endl;
+
+
+	// 추가하고 싶은 메모리 관찰 
+	cout << endl;
+	d.push_front(0);
+	d.push_back(11);
+
+	for (int i = 0; i < v.size(); ++i) {
+		cout << addressof(d[i]) << endl;
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/deque.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [ 문제 ] - 어떤 컨테이너가 int 를 가장 많이 담을 수 있나? - benchmark 
+	// vector deque list  
+	// x86 으로 해보기 - x64 하면 컴퓨터 터짐 
+	
+	vector<int> v;
+	try {
+		while (true)
+		{
+			v.push_back(1); // 더이상 메모리에 못 넣으며 bad allocation 
+		}
+	}
+	catch (exception& e) {
+		cout << "메모리 고갈		- " << e.what() << endl;
+		cout << "확보한 int 수	- " << v.size() << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [ 문제 ] - 어떤 컨테이너가 int 를 가장 많이 담을 수 있나? - benchmark 
+	// vector deque list  
+	// x86 으로 해보기 - x64 하면 컴퓨터 터짐 
+	
+	deque<int> v;
+	try {
+		while (true)
+		{
+			v.push_back(1); // 더이상 메모리에 못 넣으며 bad allocation 
+		}
+	}
+	catch (exception& e) {
+		cout << "메모리 고갈		- " << e.what() << endl;
+		cout << "확보한 int 수	- " << v.size() << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [ 문제 ] - 어떤 컨테이너가 int 를 가장 많이 담을 수 있나? - benchmark 
+	// vector deque list  
+	// x86 으로 해보기 - x64 하면 컴퓨터 터짐 
+	
+	vector<int> v;
+	try {
+		while (true)
+		{
+			v.push_back(1); // 더이상 메모리에 못 넣으며 bad allocation 
+		}
+	}
+	catch (exception& e) {
+		cout << "메모리 고갈		- " << e.what() << endl;
+		cout << "확보한 int 수	- " << v.size() << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [ 문제 ] - 어떤 컨테이너가 int 를 가장 많이 담을 수 있나? - benchmark 
+	// vector - 136'216'567 
+	// deque 
+	// list  
+	// x86 으로 해보기 - x64 하면 컴퓨터 터짐 
+	
+	deque<int> v;
+	try {
+		while (true)
+		{
+			v.push_back(1); // 더이상 메모리에 못 넣으며 bad allocation 
+		}
+	}
+	catch (exception& e) {
+		cout << "메모리 고갈		- " << e.what() << endl;
+		cout << "확보한 int 수	- " << v.size() << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [ 문제 ] - 어떤 컨테이너가 Test 객체 ( 1024 바이트 ) 를 가장 많이 담을 수 있나? 
+	// vector - 136'216'567 
+	// deque -  268'435'452
+	// list  -	 85'392'610
+	// x86 으로 해보기 - x64 하면 컴퓨터 터짐 
+	
+	vector<int> v;
+	try {
+		while (true)
+		{
+			v.push_back({}); // 더이상 메모리에 못 넣으며 bad allocation 
+		}
+	}
+	catch (exception& e) {
+		cout << "메모리 고갈		- " << e.what() << endl;
+		cout << "확보한 int 수	- " << v.size() << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [ 문제 ] - 어떤 컨테이너가 Test 객체 ( 1024 바이트 ) 를 가장 많이 담을 수 있나? 
+	// vector - 136'216'567 
+	// deque -  268'435'452
+	// list  -	 85'392'610
+	// x86 으로 해보기 - x64 하면 컴퓨터 터짐 
+	
+	vector<int> v;
+	try {
+		while (true)
+		{
+			v.push_back({}); // 더이상 메모리에 못 넣으며 bad allocation 
+		}
+	}
+	catch (exception& e) {
+		cout << "메모리 고갈		- " << e.what() << endl;
+		cout << "확보한 int 수	- " << v.size() << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+/*
+	vector -  136216567
+	deque - 
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [ 문제 ] - 어떤 컨테이너가 Test 객체 ( 1024 바이트 ) 를 가장 많이 담을 수 있나? 
+	// vector - 136'216'567 
+	// deque -  268'435'452
+	// list  -	 85'392'610
+	// x86 으로 해보기 - x64 하면 컴퓨터 터짐 
+	
+	deque<int> v;
+	try {
+		while (true)
+		{
+			v.push_back({}); // 더이상 메모리에 못 넣으며 bad allocation 
+		}
+	}
+	catch (exception& e) {
+		cout << "메모리 고갈		- " << e.what() << endl;
+		cout << "확보한 int 수	- " << v.size() << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [ 문제 ] - 어떤 컨테이너가 Test 객체 ( 1024 바이트 ) 를 가장 많이 담을 수 있나? 
+	// vector - 136'216'567 
+	// deque -  268'435'452
+	// list  -	 85'392'610
+	// x86 으로 해보기 - x64 하면 컴퓨터 터짐 
+	
+	vector<int> v;
+	try {
+		while (true)
+		{
+			v.push_back({}); // 더이상 메모리에 못 넣으며 bad allocation 
+		}
+	}
+	catch (exception& e) {
+		cout << "메모리 고갈		- " << e.what() << endl;
+		cout << "확보한 int 수	- " << v.size() << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [ 문제 ] - 어떤 컨테이너가 Test 객체 ( 1024 바이트 ) 를 가장 많이 담을 수 있나? 
+	// vector - 136'216'567 
+	// deque -  268'435'452
+	// list  -	 85'392'610
+	// x86 으로 해보기 - x64 하면 컴퓨터 터짐 
+	
+	vector<int> v;
+	try {
+		while (true)
+		{
+			v.push_back({}); // 더이상 메모리에 못 넣으며 bad allocation 
+		}
+	}
+	catch (exception& e) {
+		cout << "메모리 고갈		- " << e.what() << endl;
+		cout << "확보한 int 수	- " << v.size() << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	if (!InFile) {
+		cout << "File Open Failed" << endl;
+		return 0;
+	}
+
+	list<String> ListStr;
+	String s;
+	while (InFile >> s) {
+		ListStr.push_back(s);
+	}
+
+	
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	if (!InFile) {
+		cout << "File Open Failed" << endl;
+		return 0;
+	}
+
+	list<String> ListStr;
+	String s;
+	while (InFile >> s) {
+		ListStr.push_back(s);
+	}
+
+	cout << ListStr.size() << endl;
+
+
+	
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	if (!InFile) {
+		cout << "File Open Failed" << endl;
+		return 0;
+	}
+
+	list<String> ListStr; // insert 하면 랜덤하게 막 집어넣는다 
+	String s;
+	while (InFile >> s) { // EOF 처리  까지 해준다
+		ListStr.push_back(s);
+	}
+
+	cout << ListStr.size() << endl;
+
+
+	
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/MostStore_Container.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	if (!InFile) {
+		cout << "File Open Failed" << endl;
+		return 0;
+	}
+
+	list<String> ListStr; // insert 하면 랜덤하게 막 집어넣는다 
+	String s;
+	while (InFile >> s) { // EOF 처리  까지 해준다
+		ListStr.push_back(s);
+	}
+
+	cout << ListStr.size() << endl;
+
+
+	
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	list<String> ListStr{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+
+	// !! 해결 vector 이용
+	vector<String> v{ ListStr.begin(),ListStr.end() };
+
+	// List 를 오름차순으로 정렬하고 출력하라. 
+	/*sort(v.begin(), v.end(), [](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		}
+	);*/
+	ListStr.sort([](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		});
+
+	// sort 안됨 sort 함수는 Contiguous 메모리 에서만 돌아간다 . 
+	//sort(ListStr.begin(), ListStr.end());
+	
+
+	for (String& s : ListStr) {
+		cout << s << endl;
+
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	list<String> ListStr{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+
+	// !! 해결 vector 이용
+	vector<String> v{ ListStr.begin(),ListStr.end() };
+
+	// List 를 오름차순으로 정렬하고 출력하라. 
+	/*sort(v.begin(), v.end(), [](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		}
+	);*/
+	ListStr.sort([](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		});
+
+	// sort 안됨 sort 함수는 Contiguous 메모리 에서만 돌아간다 . 
+	//sort(ListStr.begin(), ListStr.end());
+	
+	// 같은 단어는 하나만 남긴다.
+	ListStr.unique();
+
+	for (String& s : ListStr) {
+		cout << s << endl;
+
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	list<String> ListStr{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+
+	// !! 해결 vector 이용
+	vector<String> v{ ListStr.begin(),ListStr.end() };
+
+	// List 를 오름차순으로 정렬하고 출력하라. 
+	/*sort(v.begin(), v.end(), [](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		}
+	);*/
+	ListStr.sort([](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		});
+
+	// sort 안됨 sort 함수는 Contiguous 메모리 에서만 돌아간다 . 
+	//sort(ListStr.begin(), ListStr.end());
+	
+	// 같은 단어는 하나만 남긴다.
+	ListStr.unique();
+
+	for (String& s : ListStr) {
+		cout << s << endl;
+
+	}
+
+	InFile.close();
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	std::ifstream InFile{ "list.txt" };
+	list<String> ListStr{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+	ListStr.sort([](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		});
+
+	// 같은 단어는 하나만 남긴다.
+	ListStr.unique();
+
+	// 단어 길이 순으로 정렬하라
+	ListStr.sort([](const String& a, const String& b) {
+		return a.getSize() < b.getSize();
+		});
+
+	for (String& s : ListStr) {
+		cout << s << endl;
+
+	}
+
+	InFile.close();
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	std::ifstream InFile{ "list.txt" };
+	list<String> Contatiner{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+
+	// 집에서 해보기 
+	// [ 문제 ] - 글자 수가 5인 단어를 "다섯글자.txt" 파일에 저장하라 
+	// Copy 알고리즘 ?  
+	// 스플라이싱 ?  
+	//std::ostream
+	//std::copy_if(Contatiner.begin(), Contatiner.end(), std::ostream_iterator <String>("다섯글자.txt",) , /*다섯글자라면*/);
+
+	//std::copy_if(to_vector.begin(), to_vector.end(),
+	//	std::ostream_iterator<int>(std::cout, " "),
+	//	[](int x) { return x % 2 != 0; });
+
+
+	std::ofstream out{ "다섯글자.txt" };
+
+	for (String& s : Contatiner) {
+		if (s.getSize() == 5)
+			out << s << endl;
+
+
+	}
+
+
+	InFile.close();
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif

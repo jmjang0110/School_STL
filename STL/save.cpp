@@ -71,6 +71,35 @@ namespace MySaveFileCode {
 
 
 	}
+
+	// 자동으로 제가 짠 형식에 맞게 파일 내용을 txt 에 저장합니다. 
+	void Save_File_Auto(const int& Week, const int& Day) {
+
+		std::string sWeek = std::to_string(Week);
+		std::string sDay = std::to_string(Day);
+		
+		std::string InFileName = sWeek + "주차 자료/" + sWeek + "주차_" + sDay + ".cpp";
+		std::string OutFileName = sWeek + "주차 자료/" + sWeek + "주차_" + sDay + ".txt";
+
+		std::ifstream InFile{ InFileName };
+		std::ofstream OutFIle{ OutFileName, std::ios::app }; // ios::app -> 붙여쓰기 
+
+		if (!InFile) {
+			std::cout << "\n\n=======================" << std::endl;
+			std::cout << sWeek + " - " + sDay << " Save File Failed" << "\nThere is No File\n";
+			std::cout << "=======================" << std::endl;
+
+			return;
+		}
+
+		std::vector<char> v{ std::istreambuf_iterator<char> {InFile}, {} };
+		std::copy(v.begin(), v.end(), std::ostream_iterator<char> {OutFIle});
+
+		std::cout << "\n\n=======================" << std::endl;
+		std::cout << sWeek + " - " << sDay << " Save File Success" << std::endl;
+		std::cout << "=======================" << std::endl;
+
+	}
 }
 
 

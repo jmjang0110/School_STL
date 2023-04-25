@@ -1,0 +1,2052 @@
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차 
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다. 
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------	
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+#endif
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+#include <iostream>
+#include <array>
+
+
+
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void) 
+{
+
+	
+	array<int, 10> a{ 1,2,3,4,5,6,7,8,9,10 };
+	
+	try {
+		cout << a.at(10) << endl;
+	}
+	catch (exception& e) {
+		cout << e.what() << endl;
+	}
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+
+
+#endif
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+
+*/#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 )
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void) 
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << sizeof(v) << endl;
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+#endif
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+
+*/#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+/*
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << sizeof(v) << endl;
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+*/
+
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+/*
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << sizeof(v) << endl;
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+*/
+
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << " 벡터의 개수 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << " 벡터의 개수 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << " 벡터의 크기 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << " 벡터의 크기 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;
+
+	int* p = v.data();
+	cout << *p << endl;
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << " 벡터의 크기 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;
+
+
+	cout << " 최대 몇 개 가능? : " << v.max_size() << endl;
+
+	int* p = v.data();
+	cout << *p << endl;
+
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << " 벡터의 크기 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;				// 1 멤버 
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;			// 2 멤버
+
+
+	cout << " 최대 몇 개 가능? : " << v.max_size() << endl;
+
+	int* p = v.data();
+	cout << *p << endl;
+
+
+	v.push_back(11);
+	cout << " 벡터의 크기 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;				// 1 멤버 
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;			// 2 멤버
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << " 벡터의 크기 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;				// 1 멤버 
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;			// 2 멤버
+	cout << " 현재 용량 Capacity : " << v.capacity() << endl;	// 3 멤버 
+
+
+
+	cout << " 최대 몇 개 가능? : " << v.max_size() << endl;
+
+	int* p = v.data();
+	cout << *p << endl;
+
+
+	v.push_back(11);
+	cout << " 벡터의 크기 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;				// 1 멤버 
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;			// 2 멤버
+	cout << " 현재 용량 Capacity : " << v.capacity() << endl;	// 3 멤버 
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 }; // int : aggrigation ?
+	cout << " 벡터의 크기 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;				// 1 멤버 
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;			// 2 멤버
+	cout << " 현재 용량 Capacity : " << v.capacity() << endl;	// 3 멤버 
+
+
+	
+	cout << endl << " 최대 몇 개 가능? : " << v.max_size() << endl;
+
+	int* p = v.data();
+	cout << *p << endl;
+
+
+	v.push_back(11);
+	cout << " 벡터의 크기 : " << sizeof(v) << endl;
+	cout << " 원소의 개수 : " << v.size() << endl;				// 1 멤버 
+	cout << " 원소는 어디에 있니 : " << v.data() << endl;			// 2 멤버
+	cout << " 현재 용량 Capacity : " << v.capacity() << endl;	// 3 멤버 
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+#include <thread>
+
+#include <fstream>
+
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	// [문제] - "소스.cpp에 있는 모든 글자를 읽어와라" vector<char>
+	// 오름 차순 정렬하라.
+	// 화면에 출력하라. 
+	// 공백은 제외 
+
+	std::ifstream InFile{ "6주차_1.cpp" };
+
+	std::vector<char> v{ std::istreambuf_iterator<char> {InFile} , {} };
+	for (int i = 0; i < v.size(); ++i) {
+		cout << v[i] << endl;
+
+	}
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+#include <thread>
+
+#include <fstream>
+
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	// [문제] - "소스.cpp에 있는 모든 글자를 읽어와라" vector<char>
+	// 오름 차순 정렬하라.
+	// 화면에 출력하라. 
+	// 공백은 제외 
+
+	std::ifstream InFile{ "6주차_1.cpp" };
+	
+	while (!InFile.eof()) {
+		char c;
+		InFile >> c;
+		cout << c << endl;
+
+	}
+	//InFile
+
+
+	//std::string str;
+	//is >> str;
+	//delete[] s.p;
+	//s.len = str.size();
+	//s.p = new char[s.len];
+	//memcpy(s.p, str.data(), s.len);
+	//return is;
+
+	
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+#include <thread>
+
+#include <fstream>
+
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	// [문제] - "소스.cpp에 있는 모든 글자를 읽어와라" vector<char>
+	// 오름 차순 정렬하라.
+	// 화면에 출력하라. 
+	// 공백은 제외 
+
+	std::ifstream InFile{ "6주차_1.cpp" };
+	
+	while (!InFile.eof()) {
+		char c;
+		InFile >> c;
+		if(c != ' ')
+			cout << c << endl;
+
+	}
+	//InFile
+
+
+	//std::string str;
+	//is >> str;
+	//delete[] s.p;
+	//s.len = str.size();
+	//s.p = new char[s.len];
+	//memcpy(s.p, str.data(), s.len);
+	//return is;
+
+	
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+#include <thread>
+
+#include <fstream>
+
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	// [문제] - "소스.cpp에 있는 모든 글자를 읽어와라" vector<char>
+	// 오름 차순 정렬하라.
+	// 화면에 출력하라. 
+	// 공백은 제외 
+
+	vector<char> v;
+	std::ifstream InFile{ "6주차_1.cpp" };
+	
+	while (!InFile.eof()) {
+		char c;
+		InFile >> c;
+		if (c != ' ')
+			v.push_back(c);
+	}
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << endl;
+
+
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+#include <thread>
+
+#include <fstream>
+#include <algorithm>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	// [문제] - "소스.cpp에 있는 모든 글자를 읽어와라" vector<char>
+	// 오름 차순 정렬하라.
+	// 화면에 출력하라. 
+	// 공백은 제외 
+
+	vector<char> v;
+	std::ifstream InFile{ "6주차_1.cpp" };
+	
+	/* 내 코드 */
+	//while (!InFile.eof()) {
+	//	char c;
+	//	InFile >> c;
+	//	if (c != ' ')
+	//		v.push_back(c);
+	//}
+
+
+	/* 교수님 코드*/
+	char c;
+	while (InFile >> c) {
+		v.push_back(c);
+	}
+
+	sort(v.begin(), v.end()); // 오름차순은 default  
+
+	for (char c : v)
+		cout << c << endl;
+
+		
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+#include <thread>
+
+#include <fstream>
+#include <algorithm>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	// [문제] - "소스.cpp에 있는 모든 글자를 읽어와라" vector<char>
+	// 오름 차순 정렬하라.
+	// 화면에 출력하라. 
+	// 공백은 제외 
+
+	vector<char> v;
+	std::ifstream InFile{ "6주차_1.cpp" };
+	
+	/* 내 코드 */
+	//while (!InFile.eof()) {
+	//	char c;
+	//	InFile >> c;
+	//	if (c != ' ')
+	//		v.push_back(c);
+	//}
+
+
+	/* 교수님 코드*/
+	char c;
+	while (InFile >> c) {
+		v.push_back(c);
+	}
+
+	sort(v.begin(), v.end()); // 오름차순은 default  
+
+	for (char c : v)
+		cout << c ;
+
+		
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+#define SIXTH_FIRST
+#ifdef SIXTH_FIRST
+
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 10일 MON 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+//	Sequence Container - vector - dynamic array ( 크기가 변한다 ) - Release 에서 해야한다.
+// --------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <vector>
+#include <thread>
+
+#include <fstream>
+#include <algorithm>
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+int main(void)
+{
+	// [문제] - "소스.cpp에 있는 모든 글자를 읽어와라" vector<char>
+	// 오름 차순 정렬하라.
+	// 화면에 출력하라. 
+	// 공백은 제외 
+
+	vector<char> v;
+	std::ifstream InFile{ "6주차_1.cpp" };
+	
+	/* 내 코드 */
+	//while (!InFile.eof()) {
+	//	char c;
+	//	InFile >> c;
+	//	if (c != ' ')
+	//		v.push_back(c);
+	//}
+
+
+	/* 교수님 코드*/
+	char c;
+	while (InFile >> c) {
+		v.push_back(c);
+	}
+
+	sort(v.begin(), v.end()); // 오름차순은 default  
+
+	for (char c : v)
+		cout << c ;
+
+		
+	MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+}
+
+
+
+
+
+/*
+
+// --------------------------------------------------
+//	2023 1 학기 STL 4월 03일 TUE 23 Tue 56 ( 5주 1)
+// --------------------------------------------------
+// STL 소개 - 중간시험 8주차
+// --------------------------------------------------
+#include <iostream>
+#include <array> // 템플릿 이기 때문에 소스가 오픈되어 있다.
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+
+#include "String.h"
+#include "save.h"
+
+using namespace std;
+
+// -------
+int main()
+// -------
+{
+	//array<std::string, 100> a;
+	array<String, 100> a;
+
+	// [문제] a에 "소스.cpp" 단어 100개를읽어와라.
+	std::ifstream In{ "6주차_1.cpp" };
+	for (int i = 0; i < 100; ++i) {
+		In >> a[i];
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << a[i] << endl;
+	}
+
+	for (int i = 0; i < 100; ++i) {
+		cout << i << " 번째 단어 : " << a[i] << endl;
+	}
+
+
+
+	//MySaveFileCode::Save_File("6주차_1.cpp", "6주차_1.txt");
+
+}
+
+*/
+
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+

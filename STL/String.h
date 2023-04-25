@@ -51,11 +51,13 @@ public:
 	String& operator=(const String& other);
 
 	// 이동생성자  
-	String(String&& other);
+	// 2023_4_11 nodexcept 추가 
+	String(String&& other) noexcept; // noexcept : 내가 이동하는 와중에 데이터 잃어버릴 일은 없어라는 보증서 ( 복사 말고 이동해도 괜찮아.. ) 
 	// 이동 할당 연산자 
-	String& operator=(String&& other);
+	String& operator=(String&& other) noexcept; 
 
 
+	bool operator==(const String& rhs) const;
 
 	friend std::ostream& operator<<(std::ostream& _os, const String& _str) {
 		// return _os << _str.p  << endl; // str.p 하면 안찍힌다...
@@ -76,7 +78,7 @@ public:
 	void print(const char* msg);
 
 	// 2023.04.04 추가
-	friend std::istream& operator>>(istream& is, String& s) {
+	friend std::istream& operator>>(std::istream& is, String& s) {
 		std::string str;
 		is >> str;
 		delete[] s.p;

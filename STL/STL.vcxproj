@@ -131,17 +131,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="5주차_1.cpp" />
-    <ClCompile Include="5주차_2.cpp" />
+    <ClCompile Include="5주차 자료\5주차_1.cpp" />
+    <ClCompile Include="5주차 자료\5주차_2.cpp" />
+    <ClCompile Include="6주차 자료\6주차_1.cpp" />
+    <ClCompile Include="6주차 자료\6주차_2.cpp" />
+    <ClCompile Include="7주차 자료\7주차_2.cpp" />
+    <ClCompile Include="8주차 자료\8주차_1.cpp" />
+    <ClCompile Include="Dog.cpp" />
+    <ClCompile Include="Middle_Test.cpp" />
     <ClCompile Include="save.cpp" />
     <ClCompile Include="STL.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="Study.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="Tool.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Dog.h" />
     <ClInclude Include="save.h" />
     <ClInclude Include="String.h" />
+    <ClInclude Include="Tool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

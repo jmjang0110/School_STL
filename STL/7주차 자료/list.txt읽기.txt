@@ -1,0 +1,400 @@
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	if (!InFile) {
+		cout << "File Open Failed" << endl;
+		return 0;
+	}
+
+	list<String> ListStr; // insert 하면 랜덤하게 막 집어넣는다 
+	String s;
+	while (InFile >> s) { // EOF 처리  까지 해준다
+		ListStr.push_back(s);
+	}
+
+	cout << ListStr.size() << endl;
+
+
+	
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	list<String> ListStr{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+
+	// !! 해결 vector 이용
+	vector<String> v{ ListStr.begin(),ListStr.end() };
+
+	// List 를 오름차순으로 정렬하고 출력하라. 
+	/*sort(v.begin(), v.end(), [](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		}
+	);*/
+	ListStr.sort([](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		});
+
+	// sort 안됨 sort 함수는 Contiguous 메모리 에서만 돌아간다 . 
+	//sort(ListStr.begin(), ListStr.end());
+	
+
+	for (String& s : ListStr) {
+		cout << s << endl;
+
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	list<String> ListStr{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+
+	// !! 해결 vector 이용
+	vector<String> v{ ListStr.begin(),ListStr.end() };
+
+	// List 를 오름차순으로 정렬하고 출력하라. 
+	/*sort(v.begin(), v.end(), [](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		}
+	);*/
+	ListStr.sort([](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		});
+
+	// sort 안됨 sort 함수는 Contiguous 메모리 에서만 돌아간다 . 
+	//sort(ListStr.begin(), ListStr.end());
+	
+	// 같은 단어는 하나만 남긴다.
+	ListStr.unique();
+
+	for (String& s : ListStr) {
+		cout << s << endl;
+
+	}
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	// [문제] : list.txt 를 읽어 list<String>에 저장하라
+	// 모두 몇 단어인가 출력하라 
+
+	std::ifstream InFile{ "list.txt" };
+	list<String> ListStr{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+
+	// !! 해결 vector 이용
+	vector<String> v{ ListStr.begin(),ListStr.end() };
+
+	// List 를 오름차순으로 정렬하고 출력하라. 
+	/*sort(v.begin(), v.end(), [](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		}
+	);*/
+	ListStr.sort([](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		});
+
+	// sort 안됨 sort 함수는 Contiguous 메모리 에서만 돌아간다 . 
+	//sort(ListStr.begin(), ListStr.end());
+	
+	// 같은 단어는 하나만 남긴다.
+	ListStr.unique();
+
+	for (String& s : ListStr) {
+		cout << s << endl;
+
+	}
+
+	InFile.close();
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	std::ifstream InFile{ "list.txt" };
+	list<String> ListStr{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+	ListStr.sort([](const String& L, const String& R) {
+		return L.getString() < R.getString();
+		});
+
+	// 같은 단어는 하나만 남긴다.
+	ListStr.unique();
+
+	// 단어 길이 순으로 정렬하라
+	ListStr.sort([](const String& a, const String& b) {
+		return a.getSize() < b.getSize();
+		});
+
+	for (String& s : ListStr) {
+		cout << s << endl;
+
+	}
+
+	InFile.close();
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
+
+#define SEVENTH_SECOND
+#ifdef	SEVENTH_SECOND
+
+// ============================================ //
+// deque
+// vector 와는 반대로 contiguious 하게 메모리에 저장되어있지 않지만 
+// 인덱싱이 되어있다. 
+// 
+// ============================================ //
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>		// 앞뒤에서 멤버를 추가하는 동작이 쉽다  
+#include <list>
+#include <queue>
+
+#include <fstream>
+
+
+/*
+	vector -  136216567
+	deque -   268435452
+	list -	   85375361
+	
+*/
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+
+extern bool 관찰;
+
+int main()
+{
+	std::ifstream InFile{ "list.txt" };
+	list<String> Contatiner{ /*파일 시작*/ std::istream_iterator<String>{InFile}, { }}; // insert 하면 랜덤하게 막 집어넣는다 
+
+	// 집에서 해보기 
+	// [ 문제 ] - 글자 수가 5인 단어를 "다섯글자.txt" 파일에 저장하라 
+	// Copy 알고리즘 ?  
+	// 스플라이싱 ?  
+	//std::ostream
+	//std::copy_if(Contatiner.begin(), Contatiner.end(), std::ostream_iterator <String>("다섯글자.txt",) , /*다섯글자라면*/);
+
+	//std::copy_if(to_vector.begin(), to_vector.end(),
+	//	std::ostream_iterator<int>(std::cout, " "),
+	//	[](int x) { return x % 2 != 0; });
+
+
+	std::ofstream out{ "다섯글자.txt" };
+
+	for (String& s : Contatiner) {
+		if (s.getSize() == 5)
+			out << s << endl;
+
+
+	}
+
+
+	InFile.close();
+
+	MySaveFileCode::Save_File("7주차 자료/7주차_2.cpp", "7주차 자료/list.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(7, 2);
+}
+
+#endif
