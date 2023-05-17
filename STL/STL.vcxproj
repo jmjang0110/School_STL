@@ -131,12 +131,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="10주차_1.cpp" />
+    <ClCompile Include="10주차_2.cpp" />
+    <ClCompile Include="11주차 자료\11주차_1.cpp" />
+    <ClCompile Include="11주차 자료\11주차_2.cpp" />
     <ClCompile Include="5주차 자료\5주차_1.cpp" />
     <ClCompile Include="5주차 자료\5주차_2.cpp" />
     <ClCompile Include="6주차 자료\6주차_1.cpp" />
     <ClCompile Include="6주차 자료\6주차_2.cpp" />
     <ClCompile Include="7주차 자료\7주차_2.cpp" />
     <ClCompile Include="8주차 자료\8주차_1.cpp" />
+    <ClCompile Include="9주차 자료\9주차_2.cpp" />
     <ClCompile Include="Dog.cpp" />
     <ClCompile Include="Middle_Test.cpp" />
     <ClCompile Include="save.cpp" />

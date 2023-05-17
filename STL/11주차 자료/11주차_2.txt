@@ -1,0 +1,303 @@
+
+#define ELEVENTH_SECOND
+#ifdef	ELEVENTH_SECOND
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+#include <algorithm>
+
+
+#include "../save.h"
+#include "../String.h"
+
+
+
+using namespace std;
+extern bool 관찰;
+
+int main()
+{
+	/*
+		키보드에서 입력한 단어를 사전식으로 오름차순 정렬하여 출력하라
+	*/
+	//	set<String> set{ 키보드 시작, 끝};
+	set<String> s{ istream_iterator<String>{cin}, {} };
+	for (const String& s : s) {
+		cout << s << endl;
+
+	}
+	
+	MySaveFileCode::Save_File("11주차 자료/11주차_2.cpp", "11주차 자료/키보드에서 입력한 단어를 사전식으로 오름차순 정렬.txt");
+	MySaveFileCode::Save_File_Auto(11, 2);
+}
+
+#endif
+
+#define ELEVENTH_SECOND
+#ifdef	ELEVENTH_SECOND
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+#include <algorithm>
+#include <random>
+
+
+#include "../save.h"
+#include "../String.h"
+
+
+
+using namespace std;
+extern bool 관찰;
+
+int main()
+{
+	// 1 부터 100 까지 점수를 하나도 빠짐없이 랜덤하게 출력하라.
+
+	set<int> s;
+	default_random_engine dre{ random_device{}()};
+	uniform_int_distribution uid{ 1,100 };
+
+	while (s.size() != 100)
+	{
+		s.insert(uid(dre));
+	}
+
+	for (int num : s) {
+		cout << num << ' \n';
+
+	}
+
+	
+	
+	MySaveFileCode::Save_File("11주차 자료/11주차_2.cpp", "11주차 자료/키보드에서 입력한 단어를 사전식으로 오름차순 정렬.txt");
+	MySaveFileCode::Save_File_Auto(11, 2);
+}
+
+#endif
+
+#define ELEVENTH_SECOND
+#ifdef	ELEVENTH_SECOND
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+#include <algorithm>
+#include <random>
+
+
+#include "../save.h"
+#include "../String.h"
+
+
+
+using namespace std;
+extern bool 관찰;
+
+int main()
+{
+	// 1 부터 100 까지 점수를 하나도 빠짐없이 랜덤하게 출력하라.
+
+	set<int> s;
+	default_random_engine dre{ random_device{}()};
+	uniform_int_distribution uid{ 1,100 };
+
+	while (s.size() != 100)
+	{
+		s.insert(uid(dre));
+	}
+
+	for (int num : s) {
+		cout << num << ' ';
+
+	}
+
+	
+	
+	MySaveFileCode::Save_File("11주차 자료/11주차_2.cpp", "11주차 자료/키보드에서 입력한 단어를 사전식으로 오름차순 정렬.txt");
+	MySaveFileCode::Save_File_Auto(11, 2);
+}
+
+#endif
+
+#define ELEVENTH_SECOND
+#ifdef	ELEVENTH_SECOND
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+#include <algorithm>
+#include <random>
+
+
+#include "../save.h"
+#include "../String.h"
+
+
+
+using namespace std;
+extern bool 관찰;
+
+int main()
+{
+	// 1 부터 100 까지 점수를 하나도 빠짐없이 랜덤하게 출력하라.
+
+	set<int> s;
+	vector<int> v;
+
+	default_random_engine dre{ random_device{}()};
+	uniform_int_distribution uid{ 1,100 };
+
+	while (s.size() != 100)
+	{
+		s.insert(uid(dre));
+	}
+
+	for (int num : s) {
+		cout << num << ' ';
+
+	}
+
+	
+	
+	MySaveFileCode::Save_File("11주차 자료/11주차_2.cpp", "11주차 자료/set 에 넣고 섞기.txt");
+	MySaveFileCode::Save_File_Auto(11, 2);
+}
+
+#endif
+
+#define ELEVENTH_SECOND
+#ifdef	ELEVENTH_SECOND
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+#include <algorithm>
+#include <random>
+
+
+#include "../save.h"
+#include "../String.h"
+
+
+
+using namespace std;
+extern bool 관찰;
+
+int main()
+{
+	// 1 부터 100 까지 점수를 하나도 빠짐없이 랜덤하게 출력하라.
+
+	set<int> s;
+	vector<int> v;
+
+	default_random_engine dre{ random_device{}()};
+	uniform_int_distribution uid{ 1,100 };
+
+	//while (s.size() != 100)
+	//{
+	//	s.insert(uid(dre));
+	//}
+
+	for (int i = 0; i < 100; ++i) {
+		v.push_back(i);
+	}
+
+	std::shuffle(v.begin(), v.end(), dre);
+
+	for (int num : v) {
+		cout << num << ' ';
+
+	}
+
+	
+	
+	MySaveFileCode::Save_File("11주차 자료/11주차_2.cpp", "11주차 자료/set 에 넣고 섞기.txt");
+	MySaveFileCode::Save_File_Auto(11, 2);
+}
+
+#endif
+
+#define ELEVENTH_SECOND
+#ifdef	ELEVENTH_SECOND
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+
+
+#include "../save.h"
+#include "../String.h"
+
+
+using namespace std;
+extern bool 관찰;
+
+int main()
+{
+	// 게임회사와 출시작들 
+	map<String, list<String>> game{
+		{"펄 어비스", {"검은사막", "붉은 사막", "도깨비"}},
+		{"닌텐도", {"젤다의 전설", "슈퍼 마리오", "마리오 카드", "스타폭스"}}
+	};
+
+	cout << "맵의 원소 수 - " << game.size() << endl;
+	MySaveFileCode::Save_File("11주차 자료/11주차_2.cpp", "11주차 자료/map 시작.txt");
+	MySaveFileCode::Save_File_Auto(11, 2);
+}
+
+#endif
+
+#define ELEVENTH_SECOND
+#ifdef	ELEVENTH_SECOND
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+
+
+#include "../save.h"
+#include "../String.h"
+
+
+using namespace std;
+extern bool 관찰;
+
+int main()
+{
+	// 게임회사와 출시작들 
+	// 출력?
+	// 게임을 더 넣을 수 있을까?
+
+	map<String, list<String>> game{
+		{"펄 어비스", {"검은사막", "붉은 사막", "도깨비"}},
+		{"닌텐도", {"젤다의 전설", "슈퍼 마리오", "마리오 카드", "스타폭스"}}
+	};
+
+	for (const auto& [회사, 게임들] : game) {
+		cout << 회사 << " - ";
+		for (const String& 게임 : 게임들) {
+			cout << 게임 << " ";
+		}
+		cout << endl;
+	}
+
+	cout << "맵의 원소 수 - " << game.size() << endl;
+	MySaveFileCode::Save_File("11주차 자료/11주차_2.cpp", "11주차 자료/map 시작.txt");
+	MySaveFileCode::Save_File_Auto(11, 2);
+}
+
+#endif

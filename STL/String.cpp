@@ -94,10 +94,11 @@ String& String::operator=(String&& other) noexcept
 }
 
 // 2023.04.04 추가 
-size_t String::getSize() const
+size_t String::size() const
 {
 	return len;
 }
+
 
 
 String String::operator+(const String& rhs) const // right hand side 
@@ -110,6 +111,29 @@ String String::operator+(const String& rhs) const // right hand side
 	memcpy(temp.p + len, rhs.p, rhs.len);
 	return temp;
 }
+
+
+bool String::operator==(const String& rhs) const
+{
+	/** [version 1] **/
+	//if (len != rhs.len) {
+	//   return false;
+	//}
+	//return std::equal(p, p + len, rhs.p); // #include <algorithm>
+
+	/** [version 2] **/
+	// 문자열의 길이 정보를 함께 사용
+	return std::equal(p, p + len, rhs.p, rhs.p + rhs.len);
+}
+
+bool String::operator<(const String& rhs) const
+{
+	
+	// 어떤 식으로 정렬할지는 프로그래머 마음
+	// 코딩하면서 대원칙 같은 것 : 
+	return getString() < rhs.getString();
+}
+
 
 // gettor / settor
 std::string String::getString() const
@@ -127,15 +151,40 @@ void String::print(const char* msg)
 	}
 }
 
-bool String::operator==(const String& rhs) const
-{
-	/** [version 1] **/
-	//if (len != rhs.len) {
-	//   return false;
-	//}
-	//return std::equal(p, p + len, rhs.p); // #include <algorithm>
 
-	/** [version 2] **/
-	// 문자열의 길이 정보를 함께 사용
-	return std::equal(p, p + len, rhs.p, rhs.p + rhs.len);
+
+
+
+
+String_iterator String::begin()
+{
+	return p;
 }
+
+String_iterator String::end()
+{
+	// 교수님이 한거 
+	return p + len;
+	// 내가 한거
+	//if (len >= 1)
+	//	return &p[len];
+	//else
+	//	return p;
+}
+
+
+// String 이 재공하는 역방향 반복자 [ Adapter ] 역할 
+String_reverse_iterator String::rbegin()
+{
+
+	return String_reverse_iterator(p + len);
+
+}
+
+String_reverse_iterator String::rend()
+{
+
+	return p;
+
+}
+

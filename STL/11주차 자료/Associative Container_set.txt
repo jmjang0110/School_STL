@@ -1,0 +1,331 @@
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include "../save.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+STL Containers
+Sequence	Assotiave - set multiset map multimap
+	
+	로그 시간에 주어진단느건 좋은 것이 아니다?
+	-> 벡터, 덱, 리스트 -> O(1) 에 비해서 훨씬 많이 걸린다. 
+	예를 들어 100개 원소가 들어가 있어 셋에다가 새로운 원소를 추가하는 시간은'
+	log100 -> 6,7배가 더 걸린다. 
+
+	찾기 시간이 빠르다...
+	* 벡터 -> O(n)
+	* SEt
+	Everywhere the standard library uses the Compare requirements, uniqueness is determined by using the equivalence relation.
+
+	uniqueness : 
+	
+	equivalence : 상등성 ( 똑가진 않은데 똑같다고 봐줄 수 있다.)
+
+	set 은 이미 있는 원소는 거부한다- > 어떻게 판단하지?  !comp(a, b) && !comp(b, a).
+		-> 내가 3 < 3 -> false -   
+								-> 우열을 가릴 수 없으므로 이미 있따고 판단 -> (=) 안하고 왜 이렇게 할까 ? -> 순서를 기준으로 하기 떄문이다. 
+				3 > 3 -> false -
+
+
+	set / map -> ( 상등성 / 동등성 )
+*/
+
+
+int main()
+{
+	set<int, greater<int>> s{ 1,3,5,7,9,2,4,6,8,10 };
+	// defulat 정렬기준 : less - Collable Object - Specialization 한 클래스가 생겨서 int 에 < 연산을 통해 비교할 수 있게 한다. 
+	for (int n : s)
+		cout << n << ' ';
+	cout << endl;
+
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include "../save.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+STL Containers
+Sequence	Assotiave - set multiset map multimap
+	
+	로그 시간에 주어진단느건 좋은 것이 아니다?
+	-> 벡터, 덱, 리스트 -> O(1) 에 비해서 훨씬 많이 걸린다. 
+	예를 들어 100개 원소가 들어가 있어 셋에다가 새로운 원소를 추가하는 시간은'
+	log100 -> 6,7배가 더 걸린다. 
+
+	찾기 시간이 빠르다...
+	* 벡터 -> O(n)
+	* SEt
+	Everywhere the standard library uses the Compare requirements, uniqueness is determined by using the equivalence relation.
+
+	uniqueness : 
+	
+	equivalence : 상등성 ( 똑가진 않은데 똑같다고 봐줄 수 있다.)
+
+	set 은 이미 있는 원소는 거부한다- > 어떻게 판단하지?  !comp(a, b) && !comp(b, a).
+		-> 내가 3 < 3 -> false -   
+								-> 우열을 가릴 수 없으므로 이미 있따고 판단 -> (=) 안하고 왜 이렇게 할까 ? -> 순서를 기준으로 하기 떄문이다. 
+				3 > 3 -> false -
+
+
+	set / map -> ( 상등성 / 동등성 )
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	// 정렬할 수 있는타입을 greater<int> 로 할 것이다. 
+	set<int, MyComp> s{ 1,3,5,7,9,2,4,6,8,10 };
+	// defulat 정렬기준 : less - Collable Object - Specialization 한 클래스가 생겨서 int 에 < 연산을 통해 비교할 수 있게 한다. 
+	for (int n : s)
+		cout << n << ' ';
+	cout << endl;
+
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+	vector<String> v{ std::istream_iterator<String>{in}, {} };
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+
+	"이상한 나라의 앨리스.txt" - 26634
+
+	1. String 이 operator< 를 제공하는 방법 
+
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+	vector<String> v{ std::istream_iterator<String>{in}, {} }; //왜 돌아갈까?
+	//String 에 뭐가 있어야 돌아가겠지?
+
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+
+	"이상한 나라의 앨리스.txt" - 26634
+
+	1. String 이 operator< 를 제공하는 방법 
+
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+	set<String> v{ std::istream_iterator<String>{in}, {} }; //왜 돌아갈까?
+	//String 에 뭐가 있어야 돌아가겠지?
+
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+
+	"이상한 나라의 앨리스.txt" - 26634
+
+	1. String 이 operator< 를 제공하는 방법 
+
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+	multiset<String> v{ std::istream_iterator<String>{in}, {} }; //왜 돌아갈까?
+	//String 에 뭐가 있어야 돌아가겠지?
+
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif

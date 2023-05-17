@@ -1,14 +1,2 @@
-﻿  5주차_1.cpp
-  5주차_2.cpp
-  6주차_1.cpp
-  6주차_2.cpp
-  7주차_2.cpp
-  8주차_1.cpp
-  Dog.cpp
-  Middle_Test.cpp
-  save.cpp
-C:\MyGithub\School\STL\STL\School_STL\STL\save.cpp(25,17): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  String.cpp
-  Tool.cpp
-  코드를 생성하고 있습니다...
+﻿  11주차_2.cpp
   STL.vcxproj -> C:\MyGithub\School\STL\STL\School_STL\x64\Debug\STL.exe

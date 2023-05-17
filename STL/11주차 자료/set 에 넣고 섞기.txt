@@ -1,0 +1,100 @@
+
+#define ELEVENTH_SECOND
+#ifdef	ELEVENTH_SECOND
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+#include <algorithm>
+#include <random>
+
+
+#include "../save.h"
+#include "../String.h"
+
+
+
+using namespace std;
+extern bool 관찰;
+
+int main()
+{
+	// 1 부터 100 까지 점수를 하나도 빠짐없이 랜덤하게 출력하라.
+
+	set<int> s;
+	vector<int> v;
+
+	default_random_engine dre{ random_device{}()};
+	uniform_int_distribution uid{ 1,100 };
+
+	while (s.size() != 100)
+	{
+		s.insert(uid(dre));
+	}
+
+	for (int num : s) {
+		cout << num << ' ';
+
+	}
+
+	
+	
+	MySaveFileCode::Save_File("11주차 자료/11주차_2.cpp", "11주차 자료/set 에 넣고 섞기.txt");
+	MySaveFileCode::Save_File_Auto(11, 2);
+}
+
+#endif
+
+#define ELEVENTH_SECOND
+#ifdef	ELEVENTH_SECOND
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+#include <algorithm>
+#include <random>
+
+
+#include "../save.h"
+#include "../String.h"
+
+
+
+using namespace std;
+extern bool 관찰;
+
+int main()
+{
+	// 1 부터 100 까지 점수를 하나도 빠짐없이 랜덤하게 출력하라.
+
+	set<int> s;
+	vector<int> v;
+
+	default_random_engine dre{ random_device{}()};
+	uniform_int_distribution uid{ 1,100 };
+
+	//while (s.size() != 100)
+	//{
+	//	s.insert(uid(dre));
+	//}
+
+	for (int i = 0; i < 100; ++i) {
+		v.push_back(i);
+	}
+
+	std::shuffle(v.begin(), v.end(), dre);
+
+	for (int num : v) {
+		cout << num << ' ';
+
+	}
+
+	
+	
+	MySaveFileCode::Save_File("11주차 자료/11주차_2.cpp", "11주차 자료/set 에 넣고 섞기.txt");
+	MySaveFileCode::Save_File_Auto(11, 2);
+}
+
+#endif

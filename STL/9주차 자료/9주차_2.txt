@@ -1,0 +1,900 @@
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+
+	Container : 다른 오브젝트를 저장하는 오브젝트이다.
+
+	Iterator -> 일반적 : generalization 
+		↑
+	T*       -> 구체적 : specialization
+
+/// 포인터 설명 
+	Pointer -> Pointing 한다.
+	int*p ----> n[100] / *p 는 역참조 : 찍고있는 메모리를 참조 
+	'*' : dereference Operator
+/// Iterator 설명
+		- Iterator -  
+
+		/// Iteartor 가 뭐야? = Iterators are a generalization of pointers
+	Iterators are a generalization of pointers that allow a C++ program to work with different data structures 
+	(for example, containers and ranges (since C++20)) in a uniform manner(일관된 작업방식). 
+	The iterator library provides definitions for iterators, a
+	s well as iterator traits, adaptors, and utility functions.
+
+	Since iterators are an abstraction of pointers, 
+	their semantics are a generalization of most of the semantics of pointers in C++. 
+	This ensures that every function template that takes iterators works as well with regular pointers.
+/// Iteartor 설명 ...
+
+	모든 컨테이너는 자기만의 반복자를 갖고있다.
+	Container		-> ( Iterator ) -> C++ Program
+										algorithm 에 접근 
+	*    *   *
+	vector,array,...
+
+/// Iteartor Pattern 반복자 패턴 
+C++ 에서 Interface 라는 용어는 쓰지않는다. 
+
+		
+*/
+#include <iostream>
+#include "../save.h"
+
+using namespace	std;
+
+int main()
+{
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/test.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+
+	Container : 다른 오브젝트를 저장하는 오브젝트이다.
+
+	Iterator -> 일반적 : generalization 
+		↑
+	T*       -> 구체적 : specialization
+
+/// 포인터 설명 
+	Pointer -> Pointing 한다.
+	int*p ----> n[100] / *p 는 역참조 : 찍고있는 메모리를 참조 
+	'*' : dereference Operator
+/// Iterator 설명
+		- Iterator -  
+
+		/// Iteartor 가 뭐야? = Iterators are a generalization of pointers
+	Iterators are a generalization of pointers that allow a C++ program to work with different data structures 
+	(for example, containers and ranges (since C++20)) in a uniform manner(일관된 작업방식). 
+	The iterator library provides definitions for iterators, a
+	s well as iterator traits, adaptors, and utility functions.
+
+	Since iterators are an abstraction of pointers, 
+	their semantics are a generalization of most of the semantics of pointers in C++. 
+	This ensures that every function template that takes iterators works as well with regular pointers.
+/// Iteartor 설명 ...
+
+	모든 컨테이너는 자기만의 반복자를 갖고있다.
+	Container		-> ( Iterator ) -> C++ Program
+										algorithm 에 접근 
+	*    *   *
+	vector,array,...
+
+/// Iteartor Pattern 반복자 패턴 
+C++ 에서 Interface 라는 용어는 쓰지않는다. 
+
+		
+*/
+#include <iostream>
+#include "../save.h"
+
+using namespace	std;
+
+int main()
+{
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/Iterator 에 대한 설명.txt읽기.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+
+	Container : 다른 오브젝트를 저장하는 오브젝트이다.
+	Iterator -> 일반적 : generalization 
+		↑
+	T*       -> 구체적 : specialization
+
+/// 1. 포인터 설명 
+	Pointer -> Pointing 한다.
+	int*p ----> n[100] / *p 는 역참조 : 찍고있는 메모리를 참조 
+	'*' : dereference Operator
+/// 2. Iterator 설명
+		- Iterator -  
+
+		/// Iteartor 가 뭐야? = Iterators are a generalization of pointers
+	Iterators are a generalization of pointers that allow a C++ program to work with different data structures 
+	(for example, containers and ranges (since C++20)) in a uniform manner(일관된 작업방식). 
+	The iterator library provides definitions for iterators, a
+	s well as iterator traits, adaptors, and utility functions.
+
+	Since iterators are an abstraction of pointers, 
+	their semantics are a generalization of most of the semantics of pointers in C++. 
+	This ensures that every function template that takes iterators works as well with regular pointers.
+/// Iteartor 설명 ...
+
+	모든 컨테이너는 자기만의 반복자를 갖고있다.
+	Container		-> ( Iterator ) -> C++ Program
+										algorithm 에 접근 
+	*    *   *
+	vector,array,...
+
+/// 3. Iteartor Pattern 반복자 패턴 
+C++ 에서 Interface 라는 용어는 쓰지않는다. 
+
+/// 4. Iterator Categories
+
+
+* LegacyInputIterator			: 입력 반복자 ++p
+* LegacyOutputIterator			: 출력 반복자 ++p , --p
+* LegacyForwardIterator			: 전방향 반복자 
+* LegacyBidirectionalIterator	: 양방향 반복자이중연결 리스트 가 제공하는 반복자이다. ( 양방향 반복자 )
+* LegacyRadomAccessIterator		: 랜덤 반복자임의 접근 리스트 반복자 ( deque, vector 가 가능 )
+									p[n] , p + n
+* ContiguousIterator			: 콘티구어스반복자
+
+클래스 상속도 : 자식이 늘어난다.
+반복자는 상속도에 따라 동작 방식, 메모리 관리 기능이 다르다. 
+
+
+*/
+
+#include <iostream>
+#include "../save.h"
+
+using namespace	std;
+
+int main()
+{
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/Iterator 에 대한 설명.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+
+
+#include <iostream>
+#include "../save.h"
+
+using namespace	std;
+
+int main()
+{
+	/// 출력반복자를 만들어서 동작을 관찰 이해해본다.
+	/// -> 출력반복자 어댑터를 사용해서 관찰 
+	/// ostream_iterator 은 기본생성자가 없다. 반드시 인자가 들어가야함. 
+
+
+	/*
+		출력 스트림을 돌아 다닐 수 있는 반복자
+		cout -> 모니터 
+		p { cout } ---------------> 모니터 
+		*p = 'A'
+		
+	*/
+	ostream_iterator<char> p{ cout };
+	*p = 'A';
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+
+
+#include <iostream>
+#include "../save.h"
+
+using namespace	std;
+
+int main()
+{
+	/// 출력반복자를 만들어서 동작을 관찰 이해해본다.
+	/// -> 출력반복자 어댑터를 사용해서 관찰 
+	/// ostream_iterator 은 기본생성자가 없다. 반드시 인자가 들어가야함. 
+
+
+	/*
+		출력 스트림을 돌아 다닐 수 있는 반복자
+		cout -> 모니터 
+		p { cout } ---------------> 모니터 
+		*p = 'A'
+		
+	*/
+	ostream_iterator<char> p{ cout };
+	*p = 'ABC';
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+
+
+#include <iostream>
+#include "../save.h"
+
+using namespace	std;
+
+int main()
+{
+	/// 출력반복자를 만들어서 동작을 관찰 이해해본다.
+	/// -> 출력반복자 어댑터를 사용해서 관찰 
+	/// ostream_iterator 은 기본생성자가 없다. 반드시 인자가 들어가야함. 
+
+
+	/*
+		출력 스트림을 돌아 다닐 수 있는 반복자
+		cout -> 모니터 
+		p { cout } ---------------> 모니터 
+		*p = 'A'
+		
+	*/
+	ostream_iterator<char> p{ cout };
+	*p = 'A'; // 니가 가리키고 있는 곳에 값을 집어넣어라 -> 출력반복자의 역할이다. 
+	++p;
+	*p = 'B';
+	++p;
+	*p = 'C';
+
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+
+
+#include <iostream>
+#include "../save.h"
+
+using namespace	std;
+
+int main()
+{
+	/// 출력반복자를 만들어서 동작을 관찰 이해해본다.
+	/// -> 출력반복자 어댑터를 사용해서 관찰 
+	/// ostream_iterator 은 기본생성자가 없다. 반드시 인자가 들어가야함. 
+
+
+	/*
+		출력 스트림을 돌아 다닐 수 있는 반복자
+		cout -> 모니터 
+		p { cout } ---------------> 모니터 
+		*p = 'A'
+		
+	*/
+	ostream_iterator<char> p{ cout };
+	*p = 'A'; // 니가 가리키고 있는 곳에 값을 집어넣어라 -> 출력반복자의 역할이다. 
+	++p;
+	*p = 'B';
+	++p;
+	*p = 'C';
+	// *r++ = 0? ->
+	//*r = 0;
+	//++r;
+
+	// *p = 'A' 는 아래와 같은 코드이다. 
+	(p.operator*()).operator=('A'); // 아무짓도 안한다?
+	p.operator++();
+
+	p = 'a';
+	p = 'b';
+	p = 'c';
+
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+
+
+#include <iostream>
+#include "../save.h"
+
+using namespace	std;
+
+
+int main()
+{
+	/// 출력반복자를 만들어서 동작을 관찰 이해해본다.
+	/// -> 출력반복자 어댑터를 사용해서 관찰 
+	/// ostream_iterator 은 기본생성자가 없다. 반드시 인자가 들어가야함. 
+/// https://en.cppreference.com/w/cpp/iterator
+
+	/*
+		출력 스트림을 돌아 다닐 수 있는 반복자
+		cout -> 모니터 
+		p { cout } ---------------> 모니터 
+		*p = 'A'
+		
+	*/
+	ostream_iterator<char> p{ cout };
+	*p = 'A'; // 니가 가리키고 있는 곳에 값을 집어넣어라 -> 출력반복자의 역할이다. 
+	++p;
+	*p = 'B';
+	++p;
+	*p = 'C';
+	// *r++ = 0? ->
+	//*r = 0;
+	//++r;
+
+	// *p = 'A' 는 아래와 같은 코드이다. 
+	(p.operator*()).operator=('A'); // 아무짓도 안한다?
+	p.operator++();
+
+	// 반복자 처럼 ?
+	p = 'a';
+	p = 'b';
+	p = 'c';
+
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+
+
+#include <iostream>
+#include <vector>
+
+#include "../save.h"
+
+using namespace	std;
+
+//void printCategory(std::vector<int>::iterator iter_Begin, std::vector<int>::iterator iter_End) {
+//
+//}
+template<class Iter>
+void printCategory(Iter it)
+{
+	// 자료형 Iter 가 도대체 어떤 Category인가? 
+
+}
+int add(int a, int b) {
+	cout << typeid(a).name() << endl;
+
+
+	return a + b;
+}
+
+int main()
+{
+	// 문제 : 반복자를 전달받아 어떤 종류의 반복자인지 화면에 출력하라
+	// 함수 printCategory()를 선언하고 정의하라.
+
+	vector<int> v;
+
+	//void printCategory(std::vector<int>::iterator, std::vector<int>::iterator);
+	
+	printCategory(v.begin());
+	add(1, 3);
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+
+
+#include <iostream>
+#include <vector>
+
+#include "../save.h"
+
+using namespace	std;
+
+//void printCategory(std::vector<int>::iterator iter_Begin, std::vector<int>::iterator iter_End) {
+//
+//}
+template<class Iter>
+void printCategory(Iter it)
+{
+	cout << typeid(it).name() << endl;
+
+	// 자료형 Iter 가 도대체 어떤 Category인가? 
+
+}
+int add(int a, int b) {
+	cout << typeid(a).name() << endl;
+
+
+	return a + b;
+}
+
+int main()
+{
+	// 문제 : 반복자를 전달받아 어떤 종류의 반복자인지 화면에 출력하라
+	// 함수 printCategory()를 선언하고 정의하라.
+
+	vector<int> v;
+
+	//void printCategory(std::vector<int>::iterator, std::vector<int>::iterator);
+	
+	printCategory(v.begin());
+	add(1, 3);
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+	iterator - 포인터를 일반화 한것이 반복자이다.
+	반복자 카테고리 - 입력/출력/전방향/양방향/랜덤
+	template 세상에선 type_traits 를 이용하여 여분의 정보를 표현한다. 
+		-> 이것을 함수인자의 제약조건으로 표준화 한것이 C++ 20 의 Concepts
+*/
+
+#include <iostream>
+#include <vector>
+
+#include "../save.h"
+
+using namespace	std;
+
+ /// _ 쓰면 안됨!!! 
+
+
+//void printCategory(std::vector<int>::iterator iter_Begin, std::vector<int>::iterator iter_End) {
+//
+//}
+template<class Iter>
+void printCategory(Iter it)
+{
+	cout << typeid(it).name() << endl; // 반복자이면서 여분의 정보?
+
+	//type_traits -> 너는 더하기 기능이 가능하니.. 등등 
+	// 대표적으로 is_... ( type_traits )  
+	// 자료형 Iter 가 도대체 어떤 Category인가? 
+
+}
+int add(int a, int b) {
+	cout << typeid(a).name() << endl;
+
+
+	return a + b;
+}
+
+int main()
+{
+	// 문제 : 반복자를 전달받아 어떤 종류의 반복자인지 화면에 출력하라
+	// 함수 printCategory()를 선언하고 정의하라.
+
+	//volatile const const const int const const num = 100;
+	// CV Qualifier
+	// volatile , const 가 둘이 상충되는 건데 되네..?
+
+	vector<int> v;
+
+	//void printCategory(std::vector<int>::iterator, std::vector<int>::iterator);
+	
+	printCategory(v.begin());
+	add(1, 3);
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+	iterator - 포인터를 일반화 한것이 반복자이다.
+	반복자 카테고리 - 입력/출력/전방향/양방향/랜덤
+	template 세상에선 type_traits 를 이용하여 여분의 정보를 표현한다. 
+		-> 이것을 함수인자의 제약조건으로 표준화 한것이 C++ 20 의 Concepts
+*/
+
+#include <iostream>
+#include <vector>
+
+#include "../save.h"
+
+using namespace	std;
+
+ /// _ 쓰면 안됨!!! 
+
+
+//void printCategory(std::vector<int>::iterator iter_Begin, std::vector<int>::iterator iter_End) {
+//
+//}
+template<class Iter>
+void printCategory(Iter it)
+{
+	//cout << typeid(it).name() << endl; 
+
+	// 자료형 iter 가 도대체 어떤 Category 인가?
+	// 표준 iteartor 는 반드시 여분의 자료형을 제공해야 한다. 
+	cout <<  "Category - " << typeid(Iter::iterator_category).name() << endl;;
+
+
+
+}
+int add(int a, int b) {
+	cout << typeid(a).name() << endl;
+
+
+	return a + b;
+}
+
+int main()
+{
+	// 문제 : 반복자를 전달받아 어떤 종류의 반복자인지 화면에 출력하라
+	// 함수 printCategory()를 선언하고 정의하라.
+
+	//volatile const const const int const const num = 100;
+	// CV Qualifier
+	// volatile , const 가 둘이 상충되는 건데 되네..?
+
+	vector<int> v;
+
+	//void printCategory(std::vector<int>::iterator, std::vector<int>::iterator);
+	
+	printCategory(v.begin());
+	add(1, 3);
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+	iterator - 포인터를 일반화 한것이 반복자이다.
+	반복자 카테고리 - 입력/출력/전방향/양방향/랜덤
+	template 세상에선 type_traits 를 이용하여 여분의 정보를 표현한다. 
+		-> 이것을 함수인자의 제약조건으로 표준화 한것이 C++ 20 의 Concepts
+*/
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <array>
+#include <list>
+#include<forward_list>
+
+
+#include "../save.h"
+
+using namespace	std;
+
+ /// _ 쓰면 안됨!!! 
+
+
+//void printCategory(std::vector<int>::iterator iter_Begin, std::vector<int>::iterator iter_End) {
+//
+//}
+template<class Iter>
+void printCategory(Iter it)
+{
+	//cout << typeid(it).name() << endl; 
+
+	// 자료형 iter 가 도대체 어떤 Category 인가?
+	// 표준 iteartor 는 반드시 여분의 자료형을 제공해야 한다. 
+	cout <<  "Category - " << typeid(Iter::iterator_category).name() << endl;;
+
+
+
+}
+int add(int a, int b) {
+	cout << typeid(a).name() << endl;
+
+
+	return a + b;
+}
+
+int main()
+{
+	// 문제 : 반복자를 전달받아 어떤 종류의 반복자인지 화면에 출력하라
+	// 함수 printCategory()를 선언하고 정의하라.
+
+	//volatile const const const int const const num = 100;
+	// CV Qualifier
+	// volatile , const 가 둘이 상충되는 건데 되네..?
+
+	vector<int> v;
+
+	//void printCategory(std::vector<int>::iterator, std::vector<int>::iterator);
+	
+	printCategory(istream_iterator<char>{cin});
+	printCategory(ostream_iterator<char>{cout});
+	printCategory(forward_list<int>().begin());
+	printCategory(list<int>::const_iterator());
+	printCategory(vector<int>::iterator());
+
+
+	printCategory(v.begin());
+	add(1, 3);
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+	iterator - 포인터를 일반화 한것이 반복자이다.
+	반복자 카테고리 - 입력/출력/전방향/양방향/랜덤
+	template 세상에선 type_traits 를 이용하여 여분의 정보를 표현한다. 
+		-> 이것을 함수인자의 제약조건으로 표준화 한것이 C++ 20 의 Concepts
+*/
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <array>
+#include <list>
+#include<forward_list>
+
+
+#include "../save.h"
+
+using namespace	std;
+
+ /// _ 쓰면 안됨!!! 
+
+
+//void printCategory(std::vector<int>::iterator iter_Begin, std::vector<int>::iterator iter_End) {
+//
+//}
+template<class Iter>
+void printCategory(Iter it)
+{
+	//cout << typeid(it).name() << endl; 
+
+	// 자료형 iter 가 도대체 어떤 Category 인가?
+	// 표준 iteartor 는 반드시 여분의 자료형을 제공해야 한다. 
+	cout <<  "Category - " << typeid(Iter::iterator_category).name() << endl;;
+
+
+
+}
+int add(int a, int b) {
+	cout << typeid(a).name() << endl;
+
+
+	return a + b;
+}
+
+int main()
+{
+	// 문제 : 반복자를 전달받아 어떤 종류의 반복자인지 화면에 출력하라
+	// 함수 printCategory()를 선언하고 정의하라.
+
+	//volatile const const const int const const num = 100;
+	// CV Qualifier
+	// volatile , const 가 둘이 상충되는 건데 되네..?
+
+	vector<int> v;
+
+	//void printCategory(std::vector<int>::iterator, std::vector<int>::iterator);
+	
+	printCategory(istream_iterator<char>{cin});
+	printCategory(ostream_iterator<char>{cout});
+	printCategory(forward_list<int>().begin());
+	printCategory(list<int>::const_iterator());
+	printCategory(vector<int>::iterator());
+	printCategory(deque<char>::iterator());
+
+
+
+	printCategory(v.begin());
+	add(1, 3);
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+	iterator - 포인터를 일반화 한것이 반복자이다.
+	반복자 카테고리 - 입력/출력/전방향/양방향/랜덤
+	template 세상에선 type_traits 를 이용하여 여분의 정보를 표현한다. 
+		-> 이것을 함수인자의 제약조건으로 표준화 한것이 C++ 20 의 Concepts
+*/
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <array>
+#include <list>
+#include<forward_list>
+
+
+#include "../save.h"
+
+using namespace	std;
+
+ /// _ 쓰면 안됨!!! 
+
+
+//void printCategory(std::vector<int>::iterator iter_Begin, std::vector<int>::iterator iter_End) {
+//
+//}
+template<class Iter>
+void printCategory(Iter it)
+{
+	//cout << typeid(it).name() << endl; 
+
+	// 자료형 iter 가 도대체 어떤 Category 인가?
+	// 표준 iteartor 는 반드시 여분의 자료형을 제공해야 한다. 
+	//cout <<  "Category - " << typeid(Iter::iterator_concept).name() << endl;;
+	cout << "Category - " <<
+		typeid(iterator_traits<Iter>::iterator_category).name() << endl;
+
+
+
+}
+int add(int a, int b) {
+	cout << typeid(a).name() << endl;
+
+
+	return a + b;
+}
+
+int main()
+{
+	// 문제 : 반복자를 전달받아 어떤 종류의 반복자인지 화면에 출력하라
+	// 함수 printCategory()를 선언하고 정의하라.
+
+	//volatile const const const int const const num = 100;
+	// CV Qualifier
+	// volatile , const 가 둘이 상충되는 건데 되네..?
+
+	vector<int> v;
+
+	//void printCategory(std::vector<int>::iterator, std::vector<int>::iterator);
+	
+	printCategory(istream_iterator<char>{cin});
+	printCategory(ostream_iterator<char>{cout});
+	printCategory(forward_list<int>().begin());
+	printCategory(list<int>::const_iterator());
+	printCategory(vector<int>::iterator());
+	printCategory(deque<char>::iterator());
+
+	// 전통적인 분류는 다섯가지 - vector 는 다른 방식으로 구분한다 
+
+
+	printCategory(v.begin());
+	add(1, 3);
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+	iterator - 포인터를 일반화 한것이 반복자이다.
+	반복자 카테고리 - 입력/출력/전방향/양방향/랜덤
+	template 세상에선 type_traits 를 이용하여 여분의 정보를 표현한다. 
+		-> 이것을 함수인자의 제약조건으로 표준화 한것이 C++ 20 의 Concepts
+*/
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <array>
+#include <list>
+#include<forward_list>
+
+
+#include "../save.h"
+
+using namespace	std;
+
+ /// _ 쓰면 안됨!!! 
+
+
+//void printCategory(std::vector<int>::iterator iter_Begin, std::vector<int>::iterator iter_End) {
+//
+//}
+template<class Iter>
+void printCategory(Iter it)
+{
+	//cout << typeid(it).name() << endl; 
+
+	// 자료형 iter 가 도대체 어떤 Category 인가?
+	// 표준 iteartor 는 반드시 여분의 자료형을 제공해야 한다. 
+	//cout <<  "Category - " << typeid(Iter::iterator_concept).name() << endl;;
+	cout << "Category - " <<
+		typeid(iterator_traits<Iter>::iterator_category).name() << endl;
+
+
+
+}
+int add(int a, int b) {
+	cout << typeid(a).name() << endl;
+
+
+	return a + b;
+}
+
+int main()
+{
+	// 문제 : 반복자를 전달받아 어떤 종류의 반복자인지 화면에 출력하라
+	// 함수 printCategory()를 선언하고 정의하라.
+
+	//volatile const const const int const const num = 100;
+	// CV Qualifier
+	// volatile , const 가 둘이 상충되는 건데 되네..?
+
+	vector<int> v;
+
+	//void printCategory(std::vector<int>::iterator, std::vector<int>::iterator);
+	
+	//printCategory(istream_iterator<char>{cin});
+	//printCategory(ostream_iterator<char>{cout});
+	///printCategory(forward_list<int>().begin());
+	//printCategory(list<int>::const_iterator());
+	//printCategory(vector<int>::iterator());
+	//printCategory(deque<char>::iterator());
+
+	// 전통적인 분류는 다섯가지 - vector 는 다른 방식으로 구분한다 
+
+
+	printCategory(v.begin());
+	add(1, 3);
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/[2]Iterator실습.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif

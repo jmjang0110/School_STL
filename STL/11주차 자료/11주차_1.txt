@@ -1,0 +1,985 @@
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+/*
+	iterator - 포인터를 일반화 한것이 반복자이다.
+	반복자 카테고리 - 입력/출력/전방향/양방향/랜덤
+	template 세상에선 type_traits 를 이용하여 여분의 정보를 표현한다.
+		-> 이것을 함수인자의 제약조건으로 표준화 한것이 C++ 20 의 Concepts
+*/
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <array>
+#include <list>
+#include<forward_list>
+#include <string>
+#include <algorithm>
+
+#include "../String.h"
+#include <span>
+
+
+#include "../save.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	========================================
+	1. String을 STL Container로 만들어 간다.- begin(), end()
+
+	String s{ "1234567890" };
+
+
+	s[		]				   free store
+	p[		]	----->	[ 1 2 3 4 5 6 7 8 9 0 ]
+  int[		]			  ↑					  ↑
+	 [		]		    begin				 end
+	 [		]			rend				rbegin
+	 [		]
+	 [		]
+
+	 span<>
+	 sort() 는 RandomAccess
+
+	 // 심각도	코드	설명	프로젝트	파일	줄	비표시 오류(Suppression) 상태
+	오류	C2676	이항 '-': 'const _RanIt'이(가) 이 연산자를 정의하지 않거나 미리 정의된 연산자에 허용되는 형식으로의 변환을 정의하지 않습니다.
+					-> _RanIt : Random Iterator
+	========================================
+
+*/
+
+template <class Input_Iterator, class Output_Iterator>
+void my_copy(Input_Iterator b, Input_Iterator e, Output_Iterator d) {
+	while (b != e) {
+		*d = *b;
+		++d;
+		++b;
+
+	}
+}
+
+template <class 반복자, class 값>
+반복자 my_find(반복자 beg, 반복자 end, 값 val)
+{
+	while (beg != end) {
+		if (*beg == val) {
+			return beg;
+		}
+		++beg;
+	}
+
+	return end;
+
+
+	//for (; beg != end; ++beg) {
+	//	if (*beg == val)
+	//		return beg;
+	//}
+
+	//return end;
+
+}
+
+template <class T, class Pr>
+T my_find_if(T b, T e, Pr f) {
+	while (b != e) {
+		if (f(*b) == true) /// 이거 니가 판단해줄래? 
+			return b;
+
+		++b;
+	}
+	return b;
+
+
+}
+
+int main()
+{
+
+	String s{ "여기 내용이 복사되나요?" };
+
+	vector<char> v;
+	v.reserve(s.size());
+	//copy(s.begin(), s.end(), v.begin());
+	copy(s.begin(), s.end(), back_inserter(v));
+
+	for (char c : v) {
+		cout << c;
+	}
+	cout << endl;
+
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/수업시작전.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+/*
+	iterator - 포인터를 일반화 한것이 반복자이다.
+	반복자 카테고리 - 입력/출력/전방향/양방향/랜덤
+	template 세상에선 type_traits 를 이용하여 여분의 정보를 표현한다.
+		-> 이것을 함수인자의 제약조건으로 표준화 한것이 C++ 20 의 Concepts
+*/
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <array>
+#include <list>
+#include<forward_list>
+#include <string>
+#include <algorithm>
+
+#include "../String.h"
+#include <span>
+
+
+#include "../save.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	========================================
+	1. String을 STL Container로 만들어 간다.- begin(), end()
+
+	String s{ "1234567890" };
+
+
+	s[		]				   free store
+	p[		]	----->	[ 1 2 3 4 5 6 7 8 9 0 ]
+  int[		]			  ↑					  ↑
+	 [		]		    begin				 end
+	 [		]			rend				rbegin
+	 [		]
+	 [		]
+
+	 span<>
+	 sort() 는 RandomAccess
+
+	 // 심각도	코드	설명	프로젝트	파일	줄	비표시 오류(Suppression) 상태
+	오류	C2676	이항 '-': 'const _RanIt'이(가) 이 연산자를 정의하지 않거나 미리 정의된 연산자에 허용되는 형식으로의 변환을 정의하지 않습니다.
+					-> _RanIt : Random Iterator
+	========================================
+
+*/
+
+template <class Initer, class outiter>
+void my_copy(Initer b, Initer e, outiter d) {
+	/*
+		Generic 알고리즘 	
+		지난 시간 왜 카피가 안됐나?
+		실제 카피가 안된것이 아니다. 
+	*/
+	for (; b != e; ++b, ++d)
+		*d = *b;
+
+}
+
+template <class 반복자, class 값>
+반복자 my_find(반복자 beg, 반복자 end, 값 val)
+{
+	while (beg != end) {
+		if (*beg == val) {
+			return beg;
+		}
+		++beg;
+	}
+
+	return end;
+
+
+	//for (; beg != end; ++beg) {
+	//	if (*beg == val)
+	//		return beg;
+	//}
+
+	//return end;
+
+}
+
+template <class T, class Pr>
+T my_find_if(T b, T e, Pr f) {
+	while (b != e) {
+		if (f(*b) == true) /// 이거 니가 판단해줄래? 
+			return b;
+
+		++b;
+	}
+	return b;
+
+
+}
+
+int main()
+{
+
+	String s{ "여기 내용이 복사되나요?" };
+	vector<char> v;
+	v.reserve(s.size());
+	/*
+	   s[  23 ]	-----------[ "여기 내용이 복사되나요? ]
+		[ [1] ]
+		[  0  ]	-----------[                        ]
+		[  23 ] 
+		[]
+		[]
+		[]
+		[]
+		[]
+	
+	
+	*/
+
+	//copy(s.begin(), s.end(), v.begin());
+	copy(s.begin(), s.end(), back_inserter(v));
+
+	char* p = v.data();
+	for (int i = 0; i < s.size(); ++i) {
+		cout << *p++;
+	}
+	cout << endl;
+
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/수업 1교시.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+/*
+	iterator - 포인터를 일반화 한것이 반복자이다.
+	반복자 카테고리 - 입력/출력/전방향/양방향/랜덤
+	template 세상에선 type_traits 를 이용하여 여분의 정보를 표현한다.
+		-> 이것을 함수인자의 제약조건으로 표준화 한것이 C++ 20 의 Concepts
+*/
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <array>
+#include <list>
+#include<forward_list>
+#include <string>
+#include <algorithm>
+
+#include "../String.h"
+#include <span>
+
+
+#include "../save.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	========================================
+	1. String을 STL Container로 만들어 간다.- begin(), end()
+
+	String s{ "1234567890" };
+
+
+	s[		]				   free store
+	p[		]	----->	[ 1 2 3 4 5 6 7 8 9 0 ]
+  int[		]			  ↑					  ↑
+	 [		]		    begin				 end
+	 [		]			rend				rbegin
+	 [		]
+	 [		]
+
+	 span<>
+	 sort() 는 RandomAccess
+
+	 // 심각도	코드	설명	프로젝트	파일	줄	비표시 오류(Suppression) 상태
+	오류	C2676	이항 '-': 'const _RanIt'이(가) 이 연산자를 정의하지 않거나 미리 정의된 연산자에 허용되는 형식으로의 변환을 정의하지 않습니다.
+					-> _RanIt : Random Iterator
+	========================================
+
+*/
+
+template <class Initer, class outiter>
+void my_copy(Initer b, Initer e, outiter d) {
+	/*
+		Generic 알고리즘 	
+		지난 시간 왜 카피가 안됐나?
+		실제 카피가 안된것이 아니다. 
+	*/
+	for (; b != e; ++b, ++d)
+		*d = *b;
+
+}
+
+template <class 반복자, class 값>
+반복자 my_find(반복자 beg, 반복자 end, 값 val)
+{
+	while (beg != end) {
+		if (*beg == val) {
+			return beg;
+		}
+		++beg;
+	}
+
+	return end;
+
+
+	//for (; beg != end; ++beg) {
+	//	if (*beg == val)
+	//		return beg;
+	//}
+
+	//return end;
+
+}
+
+template <class T, class Pr>
+T my_find_if(T b, T e, Pr f) {
+	while (b != e) {
+		if (f(*b) == true) /// 이거 니가 판단해줄래? 
+			return b;
+
+		++b;
+	}
+	return b;
+
+
+}
+
+int main()
+{
+
+	String s{ "여기 내용이 복사되나요?" };
+	vector<char> v;
+	v.reserve(s.size());
+	/*
+	   s[  23 ]	-----------[ "여기 내용이 복사되나요? ]
+		[ [1] ]
+	   v[0 -> 23]	-----------[ "여기 ..... 복사되나요?  ]
+		[  23 ]						back_inserter(v) ---------> 어디선가 v.push_back()
+		[]
+		[]
+		[]
+		[]
+		[]
+	
+	
+	*/
+
+	//copy(s.begin(), s.end(), v.begin());
+	copy(s.begin(), s.end(), back_inserter(v)); // back_inserter : 
+
+	char* p = v.data();
+	for (int i = 0; i < s.size(); ++i) {
+		cout << *p++;
+	}
+	cout << endl;
+
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/수업 1교시.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include "../save.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+STL Containers
+Sequence	Assotiave - set multiset map multimap
+	
+	로그 시간에 주어진단느건 좋은 것이 아니다?
+	-> 벡터, 덱, 리스트 -> O(1) 에 비해서 훨씬 많이 걸린다. 
+	예를 들어 100개 원소가 들어가 있어 셋에다가 새로운 원소를 추가하는 시간은'
+	log100 -> 6,7배가 더 걸린다. 
+
+	찾기 시간이 빠르다...
+	* 벡터 -> O(n)
+	* SEt
+	Everywhere the standard library uses the Compare requirements, uniqueness is determined by using the equivalence relation.
+
+	uniqueness : 
+	
+	equivalence : 상등성 ( 똑가진 않은데 똑같다고 봐줄 수 있다.)
+
+	set 은 이미 있는 원소는 거부한다- > 어떻게 판단하지?  !comp(a, b) && !comp(b, a).
+		-> 내가 3 < 3 -> false -   
+								-> 우열을 가릴 수 없으므로 이미 있따고 판단 -> (=) 안하고 왜 이렇게 할까 ? -> 순서를 기준으로 하기 떄문이다. 
+				3 > 3 -> false -
+
+
+	set / map -> ( 상등성 / 동등성 )
+*/
+
+
+int main()
+{
+	set<int> s{ 1,3,5,7,9,2,4,6,8,10 };
+	for (int n : s)
+		cout << n << ' ';
+	cout << endl;
+
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set_map.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include "../save.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+STL Containers
+Sequence	Assotiave - set multiset map multimap
+	
+	로그 시간에 주어진단느건 좋은 것이 아니다?
+	-> 벡터, 덱, 리스트 -> O(1) 에 비해서 훨씬 많이 걸린다. 
+	예를 들어 100개 원소가 들어가 있어 셋에다가 새로운 원소를 추가하는 시간은'
+	log100 -> 6,7배가 더 걸린다. 
+
+	찾기 시간이 빠르다...
+	* 벡터 -> O(n)
+	* SEt
+	Everywhere the standard library uses the Compare requirements, uniqueness is determined by using the equivalence relation.
+
+	uniqueness : 
+	
+	equivalence : 상등성 ( 똑가진 않은데 똑같다고 봐줄 수 있다.)
+
+	set 은 이미 있는 원소는 거부한다- > 어떻게 판단하지?  !comp(a, b) && !comp(b, a).
+		-> 내가 3 < 3 -> false -   
+								-> 우열을 가릴 수 없으므로 이미 있따고 판단 -> (=) 안하고 왜 이렇게 할까 ? -> 순서를 기준으로 하기 떄문이다. 
+				3 > 3 -> false -
+
+
+	set / map -> ( 상등성 / 동등성 )
+*/
+
+
+int main()
+{
+	set<int, greater<int>> s{ 1,3,5,7,9,2,4,6,8,10 };
+	// defulat 정렬기준 : less - Collable Object - Specialization 한 클래스가 생겨서 int 에 < 연산을 통해 비교할 수 있게 한다. 
+	for (int n : s)
+		cout << n << ' ';
+	cout << endl;
+
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set_map.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include "../save.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+STL Containers
+Sequence	Assotiave - set multiset map multimap
+	
+	로그 시간에 주어진단느건 좋은 것이 아니다?
+	-> 벡터, 덱, 리스트 -> O(1) 에 비해서 훨씬 많이 걸린다. 
+	예를 들어 100개 원소가 들어가 있어 셋에다가 새로운 원소를 추가하는 시간은'
+	log100 -> 6,7배가 더 걸린다. 
+
+	찾기 시간이 빠르다...
+	* 벡터 -> O(n)
+	* SEt
+	Everywhere the standard library uses the Compare requirements, uniqueness is determined by using the equivalence relation.
+
+	uniqueness : 
+	
+	equivalence : 상등성 ( 똑가진 않은데 똑같다고 봐줄 수 있다.)
+
+	set 은 이미 있는 원소는 거부한다- > 어떻게 판단하지?  !comp(a, b) && !comp(b, a).
+		-> 내가 3 < 3 -> false -   
+								-> 우열을 가릴 수 없으므로 이미 있따고 판단 -> (=) 안하고 왜 이렇게 할까 ? -> 순서를 기준으로 하기 떄문이다. 
+				3 > 3 -> false -
+
+
+	set / map -> ( 상등성 / 동등성 )
+*/
+
+
+int main()
+{
+	set<int, greater<int>> s{ 1,3,5,7,9,2,4,6,8,10 };
+	// defulat 정렬기준 : less - Collable Object - Specialization 한 클래스가 생겨서 int 에 < 연산을 통해 비교할 수 있게 한다. 
+	for (int n : s)
+		cout << n << ' ';
+	cout << endl;
+
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include "../save.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+STL Containers
+Sequence	Assotiave - set multiset map multimap
+	
+	로그 시간에 주어진단느건 좋은 것이 아니다?
+	-> 벡터, 덱, 리스트 -> O(1) 에 비해서 훨씬 많이 걸린다. 
+	예를 들어 100개 원소가 들어가 있어 셋에다가 새로운 원소를 추가하는 시간은'
+	log100 -> 6,7배가 더 걸린다. 
+
+	찾기 시간이 빠르다...
+	* 벡터 -> O(n)
+	* SEt
+	Everywhere the standard library uses the Compare requirements, uniqueness is determined by using the equivalence relation.
+
+	uniqueness : 
+	
+	equivalence : 상등성 ( 똑가진 않은데 똑같다고 봐줄 수 있다.)
+
+	set 은 이미 있는 원소는 거부한다- > 어떻게 판단하지?  !comp(a, b) && !comp(b, a).
+		-> 내가 3 < 3 -> false -   
+								-> 우열을 가릴 수 없으므로 이미 있따고 판단 -> (=) 안하고 왜 이렇게 할까 ? -> 순서를 기준으로 하기 떄문이다. 
+				3 > 3 -> false -
+
+
+	set / map -> ( 상등성 / 동등성 )
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	// 정렬할 수 있는타입을 greater<int> 로 할 것이다. 
+	set<int, MyComp> s{ 1,3,5,7,9,2,4,6,8,10 };
+	// defulat 정렬기준 : less - Collable Object - Specialization 한 클래스가 생겨서 int 에 < 연산을 통해 비교할 수 있게 한다. 
+	for (int n : s)
+		cout << n << ' ';
+	cout << endl;
+
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+	vector<String> v{ std::istream_iterator<String>{in}, {} };
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+
+	"이상한 나라의 앨리스.txt" - 26634
+
+	1. String 이 operator< 를 제공하는 방법 
+
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+	vector<String> v{ std::istream_iterator<String>{in}, {} }; //왜 돌아갈까?
+	//String 에 뭐가 있어야 돌아가겠지?
+
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+
+	"이상한 나라의 앨리스.txt" - 26634
+
+	1. String 이 operator< 를 제공하는 방법 
+
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+	set<String> v{ std::istream_iterator<String>{in}, {} }; //왜 돌아갈까?
+	//String 에 뭐가 있어야 돌아가겠지?
+
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+
+	"이상한 나라의 앨리스.txt" - 26634
+
+	1. String 이 operator< 를 제공하는 방법 
+
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+	multiset<String> v{ std::istream_iterator<String>{in}, {} }; //왜 돌아갈까?
+	//String 에 뭐가 있어야 돌아가겠지?
+
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/Associative Container_set.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+
+	"이상한 나라의 앨리스.txt" - 26634
+
+	1. String 이 operator< 를 제공하는 방법 
+
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+	multiset<String> v{ std::istream_iterator<String>{in}, {} }; //왜 돌아갈까?
+	//String 에 뭐가 있어야 돌아가겠지?
+
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/이상한나라의 앨리스 set/multiset.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	실습 : "이상한 나라의 엘리스.txt를 vector<String>으로 읽어라"
+	모두 몇 개의 String 이 있는지 출력하라 
+
+	"이상한 나라의 앨리스.txt" - 26634
+
+	1. String 이 operator< 를 제공하는 방법 
+
+*/
+class MyComp {
+public:
+
+	bool operator()(int a, int b ) const  {
+		cout << "Set Call : " << a << " " << b << "\n";
+		return a > b;
+	}
+};
+
+int main()
+{
+	/*std::vector<String> vecStr;
+	std::ifstream file{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		
+	}*/
+
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in)
+		return 0;
+
+
+	//multiset<String> v{ std::istream_iterator<String>{in}, {} }; //왜 돌아갈까? 26634
+	set<String> v{ std::istream_iterator<String>{in}, {} }; //왜 돌아갈까? 26634
+	//String 에 뭐가 있어야 돌아가겠지?
+
+	cout << "읽은 개수 :" << v.size() << endl;
+
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/이상한나라의 앨리스 set/multiset.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif
+
+#define ELEVENTH_FIRST
+#ifdef	ELEVENTH_FIRST
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <fstream>
+#include <algorithm>
+
+
+#include "../save.h"
+#include "../String.h"
+
+using namespace std;
+extern bool 관찰;
+/*
+	1. String 에 ,operator<를 제공 
+	2. less<String> 을 ㅈㄴ다 ( Specialization )
+*/
+
+template<>
+// 컴파일러가 확장하지 못하도록 Specialization 해준다. 
+struct less <String> {
+	// operator() : 함수 호출 연산자 
+	bool operator()( const String& a, const String& b) const {
+		// 길이 순 정렬
+		return a.size() < b.size();
+	}
+};
+
+int main()
+{
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	set<String> v{ std::istream_iterator<String>{in}, {} }; 
+	cout << "읽은 개수 :" << v.size() << endl;
+
+	for (const String& s : v) {
+		cout << s << endl;
+	}
+
+	MySaveFileCode::Save_File("11주차 자료/11주차_1.cpp", "11주차 자료/이상한나라의 앨리스교수님 실습.txt");
+	MySaveFileCode::Save_File_Auto(11, 1);
+}
+
+#endif

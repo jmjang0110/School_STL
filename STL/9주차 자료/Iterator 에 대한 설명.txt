@@ -1,0 +1,67 @@
+
+#define NINE_SECOND
+#ifdef	NINE_SECOND
+/*
+
+	Container : 다른 오브젝트를 저장하는 오브젝트이다.
+	Iterator -> 일반적 : generalization 
+		↑
+	T*       -> 구체적 : specialization
+
+/// 1. 포인터 설명 
+	Pointer -> Pointing 한다.
+	int*p ----> n[100] / *p 는 역참조 : 찍고있는 메모리를 참조 
+	'*' : dereference Operator
+/// 2. Iterator 설명
+		- Iterator -  
+
+		/// Iteartor 가 뭐야? = Iterators are a generalization of pointers
+	Iterators are a generalization of pointers that allow a C++ program to work with different data structures 
+	(for example, containers and ranges (since C++20)) in a uniform manner(일관된 작업방식). 
+	The iterator library provides definitions for iterators, a
+	s well as iterator traits, adaptors, and utility functions.
+
+	Since iterators are an abstraction of pointers, 
+	their semantics are a generalization of most of the semantics of pointers in C++. 
+	This ensures that every function template that takes iterators works as well with regular pointers.
+/// Iteartor 설명 ...
+
+	모든 컨테이너는 자기만의 반복자를 갖고있다.
+	Container		-> ( Iterator ) -> C++ Program
+										algorithm 에 접근 
+	*    *   *
+	vector,array,...
+
+/// 3. Iteartor Pattern 반복자 패턴 
+C++ 에서 Interface 라는 용어는 쓰지않는다. 
+
+/// 4. Iterator Categories
+
+
+* LegacyInputIterator			: 입력 반복자 ++p
+* LegacyOutputIterator			: 출력 반복자 ++p , --p
+* LegacyForwardIterator			: 전방향 반복자 
+* LegacyBidirectionalIterator	: 양방향 반복자이중연결 리스트 가 제공하는 반복자이다. ( 양방향 반복자 )
+* LegacyRadomAccessIterator		: 랜덤 반복자임의 접근 리스트 반복자 ( deque, vector 가 가능 )
+									p[n] , p + n
+* ContiguousIterator			: 콘티구어스반복자
+
+클래스 상속도 : 자식이 늘어난다.
+반복자는 상속도에 따라 동작 방식, 메모리 관리 기능이 다르다. 
+
+
+*/
+
+#include <iostream>
+#include "../save.h"
+
+using namespace	std;
+
+int main()
+{
+
+	MySaveFileCode::Save_File("9주차 자료/9주차_2.cpp", "9주차 자료/Iterator 에 대한 설명.txt");
+	MySaveFileCode::Save_File_Auto(9, 2);
+}
+
+#endif

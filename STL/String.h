@@ -23,6 +23,107 @@
 */
 class ostream;
 class string;
+// String 이 제공하는 반복자
+// 2023 05 08
+class String_iterator {
+public:
+	using iterator_category = std::random_access_iterator_tag;
+	using value_type        = char;
+	using difference_type   = long long;
+	using pounter           = char*;
+	using reference         = char&;
+
+private:
+	char* p;
+public:
+	String_iterator() = default;
+	String_iterator(char* p) : p{ p } {}
+
+
+
+	String_iterator& operator++()
+	{
+		++p;
+		return *this;
+
+	}
+
+	char& operator*() const {
+		return *p;
+	}
+
+	// 2023 05 09 sort()에 필요한 연산자들
+	difference_type operator-(const String_iterator& rhs) const {
+		return p - rhs.p;
+	}
+	
+	String_iterator& operator--(){
+		--p;
+		return *this;
+	}
+
+
+	String_iterator operator+(difference_type n) const {
+		return String_iterator(p + n);
+
+	}
+
+	String_iterator operator-(difference_type n) const {
+		return String_iterator(p - n);
+	}
+
+
+// 관계연산자  ==   !=   <   >   <=   >=   Relational Operators
+// C++ 20 에서는 <=> 로 한번만 코딩 ( SpaceShip operator / Three Way Comparison Operator )
+
+	//오류	C7634	'bool'은(는) 유효한 비교 형식이 아닙니다.대신 'std::strong_ordering' 사용을 고려하세요. -> auto
+	auto operator<=>(const String_iterator& rhs) const = default;
+	/*
+	
+	bool operator!= (const String_iterator& rhs) const {
+		return p != rhs.p;
+	}
+
+	bool operator==(const String_iterator& rhs) const {
+		return p == rhs.p;
+	}
+
+	bool operator<(const String_iterator& rhs)const {
+		return p < rhs.p;
+	}
+	
+	*/
+	
+
+
+
+
+};
+
+
+// String 이 제공하는 역방향 반복자
+// 2023 05 08
+class String_reverse_iterator {
+
+private:
+	char* p;
+
+public:
+	String_reverse_iterator() = default;
+	String_reverse_iterator(char* p) : p{ p } {}
+
+	char& operator*() const{
+		return *(p - 1);
+	}
+	String_reverse_iterator& operator++() {
+		--p;
+		return *this;
+	}
+	bool operator!=(const String_reverse_iterator& rhs) const {
+		return p != rhs.p;
+	}
+
+};
 
 class String {
 private:
@@ -59,6 +160,9 @@ public:
 
 	bool operator==(const String& rhs) const;
 
+	// 2023 05 15 추가 - set 이 요구하는 default 정렬기준 
+	bool operator<(const String& rhs) const;
+
 	friend std::ostream& operator<<(std::ostream& _os, const String& _str) {
 		// return _os << _str.p  << endl; // str.p 하면 안찍힌다...
 		for (int i = 0; i < _str.len; ++i) {
@@ -89,13 +193,19 @@ public:
 
 	}
 
-	size_t getSize() const;
+	size_t size() const;
 
 	/*friend std::ifstream& operator>>(std::ifstream& os, const String& str) {
 		return os >> str.getString();
 	}*/
 
+public:
+	// 2023 05 08
+	String_iterator begin();
+	String_iterator end();
 
 
+	String_reverse_iterator rbegin();
+	String_reverse_iterator rend();
 };
 

@@ -26,6 +26,9 @@
     <Filter Include="Tool\Dog">
       <UniqueIdentifier>{8b3e61e3-3f56-414d-a32b-7ebf63521d12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="STL공부자료\5월">
+      <UniqueIdentifier>{9d24419c-e8e8-4c2d-8738-12d7721b9f4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STL.cpp">
@@ -69,6 +72,21 @@
     </ClCompile>
     <ClCompile Include="Dog.cpp">
       <Filter>Tool\Dog</Filter>
+    </ClCompile>
+    <ClCompile Include="9주차 자료\9주차_2.cpp">
+      <Filter>STL공부자료\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="10주차_1.cpp">
+      <Filter>STL공부자료\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="10주차_2.cpp">
+      <Filter>STL공부자료\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="11주차 자료\11주차_1.cpp">
+      <Filter>STL공부자료\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="11주차 자료\11주차_2.cpp">
+      <Filter>STL공부자료\5월</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
