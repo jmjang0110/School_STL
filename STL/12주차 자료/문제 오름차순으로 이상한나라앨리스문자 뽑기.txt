@@ -1,0 +1,60 @@
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	5/29 - 월 - 13즈 1일 동영상
+	6/6  - 화 - 14즈 2일 - 동영상
+	6/13 - 화 - 15주 2일 기말시험
+	6/20 - 월 - 성적게시 
+	
+*/
+
+int main()
+{
+	/// [ 문제 ] - "이상한 나라의 앨리스.txt" 에 사용된 문자와 사용된 횟수를 출력하라. 
+	
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+
+	map<int, char, greater<int>> testmap;
+
+
+	/// 파일 읽기 
+	char c;
+	while (in >> c) {
+		cimap[c]++;  /// c 라고 하는 문자가 키값으로 전달된다. -> Value(int) ++ 됨 
+	}
+
+	for (auto [문자, 개수] : cimap) {
+		testmap.insert(pair(개수, 문자));
+		//cout << 문자 << " - " << 개수 << endl;
+	}
+
+	for (auto [개수, 문자] : testmap) {
+		cout << 개수 << " - " << 문자 << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("12주차 자료/12주차_1.cpp", "12주차 자료/문제 오름차순으로 이상한나라앨리스문자 뽑기.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif

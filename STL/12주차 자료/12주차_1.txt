@@ -1,0 +1,1528 @@
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	// °ÔÀÓÈ¸»ç¿Í Ãâ½ÃÀÛµé 
+	// Ãâ·Â?
+	// °ÔÀÓÀ» ´õ ³ÖÀ» ¼ö ÀÖÀ»±î?
+
+	// Key Value : Key ¸¦ ±âÁØÀ¸·Î default Á¤·Ä 
+	// map ÀÇ µ¥ÀÌÅÍ¸¦ pair ·Î ¿«¾î¼­ Á¦°øÇÏµµ·Ï µÇ¾îÀÖ´Ù. 
+	map<String, list<String>> game{
+		{"ÆŞ ¾îºñ½º", {"°ËÀº»ç¸·", "ºÓÀº »ç¸·", "µµ±úºñ"}},
+		{"´ÑÅÙµµ", {"Á©´ÙÀÇ Àü¼³", "½´ÆÛ ¸¶¸®¿À", "¸¶¸®¿À Ä«µå", "½ºÅ¸Æø½º"}}
+	};
+
+	/// ¿ø¼Ò Ãß°¡ 
+	game.insert(pair < String, list<String>> { "µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}});
+	//game.insert(make_pair("µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}) );  // ¼÷Á¦ µ¹¾Æ°¡°Ô ¸¸µé±â ( "µ¥ºê½Ã½ºÅÍÁö" string À¸·Î ³ª¿Ã ¼ö ÀÖ°Ô ¸¸µé±â 
+
+	// ±¸Á¶È­µÈ ¹ÙÀÎµù 
+	for (const auto& [È¸»ç, °ÔÀÓµé] : game) {
+		cout << È¸»ç << " - ";
+		for (const String& °ÔÀÓ : °ÔÀÓµé) {
+			cout << "\"" << °ÔÀÓ << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "¸ÊÀÇ ¿ø¼Ò ¼ö - " << game.size() << endl;
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/0522°­ÀÇ½ÃÀÛ.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	// °ÔÀÓÈ¸»ç¿Í Ãâ½ÃÀÛµé 
+	// Ãâ·Â?
+	// °ÔÀÓÀ» ´õ ³ÖÀ» ¼ö ÀÖÀ»±î?
+
+	// Key Value : Key ¸¦ ±âÁØÀ¸·Î default Á¤·Ä 
+	// map ÀÇ µ¥ÀÌÅÍ¸¦ pair ·Î ¿«¾î¼­ Á¦°øÇÏµµ·Ï µÇ¾îÀÖ´Ù. 
+	map<String, list<String>> game{
+		{"ÆŞ ¾îºñ½º", {"°ËÀº»ç¸·", "ºÓÀº »ç¸·", "µµ±úºñ"}},
+		{"´ÑÅÙµµ", {"Á©´ÙÀÇ Àü¼³", "½´ÆÛ ¸¶¸®¿À", "¸¶¸®¿À Ä«µå", "½ºÅ¸Æø½º"}}
+	};
+
+	/// ¿ø¼Ò Ãß°¡ 
+	game.insert(pair < String, list<String>> { "µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}});
+	//game.insert(make_pair("µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}) );  // ¼÷Á¦ µ¹¾Æ°¡°Ô ¸¸µé±â ( "µ¥ºê½Ã½ºÅÍÁö" string À¸·Î ³ª¿Ã ¼ö ÀÖ°Ô ¸¸µé±â 
+
+	///					map < È¸»ç (const) , °ÔÀÓ > - Key ´Â Á¤·ÄÀ» ÆÄ±«ÇÏ¸é ¾ÈµÇ¹Ç·Î constÀÌ´Ù
+	///				Node[µ¥ºê½Ã½º] -> [ ]  
+	///					¸¸¾à¿¡ key °ªÀ» ¹Ù²Ù°í ½Í´Ù¸é ? - ÀÌ ³ëµåÀÇ handleÀ» ¹Ş¾Æ¼­ ¹Ù²Û´Ù.  ( Extranct -> ¼öÁ¤ -> Áı¾î³Ö±â )
+	///
+	///				 ¢×				¢Ù
+	///			[´ÑÅÙµµ]	->[] ¡ê[]   [ÆŞ¾îºñ½º] -> [] ¡ê [] ¡ê []
+
+	/// ¸ÊÀÇ Å°°ªÀ» º¯°æÇÏ°í ½Í´Ù¸é extract ¸â¹ö¸¦ ÀÌ¿ëÇÑ´Ù. ( C++ 17 )
+	auto Nodehandle = game.extract("´ÑÅÙµµ");
+	Nodehandle.key() = "Nintendo";				// ·¹ÆÛ·±½º¸¦ ¸®ÅÏÇÑ´Ù. 
+	game.insert(std::move(Nodehandle)); // std::move - static cast ÀÌ´Ù = static_cast<String&&>(Nodehandle) = std::move(Nodehandle)
+
+	
+
+
+	// ±¸Á¶È­µÈ ¹ÙÀÎµù 
+	for (const auto& [È¸»ç, °ÔÀÓµé] : game) {
+		cout << È¸»ç << " - ";
+		for (const String& °ÔÀÓ : °ÔÀÓµé) {
+			cout << "\"" << °ÔÀÓ << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "¸ÊÀÇ ¿ø¼Ò ¼ö - " << game.size() << endl;
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/0522°­ÀÇ½ÃÀÛ.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	// °ÔÀÓÈ¸»ç¿Í Ãâ½ÃÀÛµé 
+	// Ãâ·Â?
+	// °ÔÀÓÀ» ´õ ³ÖÀ» ¼ö ÀÖÀ»±î?
+
+	// Key Value : Key ¸¦ ±âÁØÀ¸·Î default Á¤·Ä 
+	// map ÀÇ µ¥ÀÌÅÍ¸¦ pair ·Î ¿«¾î¼­ Á¦°øÇÏµµ·Ï µÇ¾îÀÖ´Ù. 
+	map<String, list<String>> game{
+		{"ÆŞ ¾îºñ½º", {"°ËÀº»ç¸·", "ºÓÀº »ç¸·", "µµ±úºñ"}},
+		{"´ÑÅÙµµ", {"Á©´ÙÀÇ Àü¼³", "½´ÆÛ ¸¶¸®¿À", "¸¶¸®¿À Ä«µå", "½ºÅ¸Æø½º"}}
+	};
+
+	/// ¿ø¼Ò Ãß°¡ 
+	game.insert(pair < String, list<String>> { "µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}});
+	//game.insert(make_pair("µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}) );  // ¼÷Á¦ µ¹¾Æ°¡°Ô ¸¸µé±â ( "µ¥ºê½Ã½ºÅÍÁö" string À¸·Î ³ª¿Ã ¼ö ÀÖ°Ô ¸¸µé±â 
+
+	///					map < È¸»ç (const) , °ÔÀÓ > - Key ´Â Á¤·ÄÀ» ÆÄ±«ÇÏ¸é ¾ÈµÇ¹Ç·Î constÀÌ´Ù
+	///				Node[µ¥ºê½Ã½º] -> [ ]  
+	///					¸¸¾à¿¡ key °ªÀ» ¹Ù²Ù°í ½Í´Ù¸é ? - ÀÌ ³ëµåÀÇ handleÀ» ¹Ş¾Æ¼­ ¹Ù²Û´Ù.  ( Extranct -> ¼öÁ¤ -> Áı¾î³Ö±â )
+	///
+	///				 ¢×				¢Ù
+	///			[´ÑÅÙµµ]	->[] ¡ê[]   [ÆŞ¾îºñ½º] -> [] ¡ê [] ¡ê []
+
+	/// ¸ÊÀÇ Å°°ªÀ» º¯°æÇÏ°í ½Í´Ù¸é extract ¸â¹ö¸¦ ÀÌ¿ëÇÑ´Ù. ( C++ 17 )
+	auto Nodehandle = game.extract("´ÑÅÙµµ");
+	Nodehandle.key() = "Nintendo";				// ·¹ÆÛ·±½º¸¦ ¸®ÅÏÇÑ´Ù. 
+	game.insert(std::move(Nodehandle)); // std::move - static cast ÀÌ´Ù = static_cast<String&&>(Nodehandle) = std::move(Nodehandle)
+
+	/*
+		¹®Á¦ : 
+	*/
+	
+
+
+	// ±¸Á¶È­µÈ ¹ÙÀÎµù 
+	for (const auto& [È¸»ç, °ÔÀÓµé] : game) {
+		cout << È¸»ç << " - ";
+		for (const String& °ÔÀÓ : °ÔÀÓµé) {
+			cout << "\"" << °ÔÀÓ << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "¸ÊÀÇ ¿ø¼Ò ¼ö - " << game.size() << endl;
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/map Extract Key °ª º¯°æ.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	// °ÔÀÓÈ¸»ç¿Í Ãâ½ÃÀÛµé 
+	// Ãâ·Â?
+	// °ÔÀÓÀ» ´õ ³ÖÀ» ¼ö ÀÖÀ»±î?
+
+	// Key Value : Key ¸¦ ±âÁØÀ¸·Î default Á¤·Ä 
+	// map ÀÇ µ¥ÀÌÅÍ¸¦ pair ·Î ¿«¾î¼­ Á¦°øÇÏµµ·Ï µÇ¾îÀÖ´Ù. 
+	map<String, list<String>> game{
+		{"ÆŞ ¾îºñ½º", {"°ËÀº»ç¸·", "ºÓÀº »ç¸·", "µµ±úºñ"}},
+		{"´ÑÅÙµµ", {"Á©´ÙÀÇ Àü¼³", "½´ÆÛ ¸¶¸®¿À", "¸¶¸®¿À Ä«µå", "½ºÅ¸Æø½º"}}
+	};
+
+	/// ¿ø¼Ò Ãß°¡ 
+	game.insert(pair < String, list<String>> { "µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}});
+	//game.insert(make_pair("µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}) );  // ¼÷Á¦ µ¹¾Æ°¡°Ô ¸¸µé±â ( "µ¥ºê½Ã½ºÅÍÁö" string À¸·Î ³ª¿Ã ¼ö ÀÖ°Ô ¸¸µé±â 
+
+	///					map < È¸»ç (const) , °ÔÀÓ > - Key ´Â Á¤·ÄÀ» ÆÄ±«ÇÏ¸é ¾ÈµÇ¹Ç·Î constÀÌ´Ù
+	///				Node[µ¥ºê½Ã½º] -> [ ]  
+	///					¸¸¾à¿¡ key °ªÀ» ¹Ù²Ù°í ½Í´Ù¸é ? - ÀÌ ³ëµåÀÇ handleÀ» ¹Ş¾Æ¼­ ¹Ù²Û´Ù.  ( Extranct -> ¼öÁ¤ -> Áı¾î³Ö±â )
+	///
+	///				 ¢×				¢Ù
+	///			[´ÑÅÙµµ]	->[] ¡ê[]   [ÆŞ¾îºñ½º] -> [] ¡ê [] ¡ê []
+
+	/// ¸ÊÀÇ Å°°ªÀ» º¯°æÇÏ°í ½Í´Ù¸é extract ¸â¹ö¸¦ ÀÌ¿ëÇÑ´Ù. ( C++ 17 )
+	//auto Nodehandle = game.extract("´ÑÅÙµµ");
+	//Nodehandle.key() = "Nintendo";				/// ·¹ÆÛ·±½º¸¦ ¸®ÅÏÇÑ´Ù. 
+	//game.insert(std::move(Nodehandle));			/// std::move - static cast ÀÌ´Ù = static_cast<String&&>(Nodehandle) = std::move(Nodehandle)
+
+	/*
+		¹®Á¦ 
+			- ´ÑÅÙµµÀÇ "º°ÀÇ Ä¿ºñ"¸¦ Ãß°¡ÇÏ¶ó 
+	*/
+
+	map<String, list<String>>::iterator iter = game.find("´ÑÅÙµµ");
+	iter->second.push_back("º°ÀÇ Ä¿ºñ");
+
+
+	
+
+
+
+	// ±¸Á¶È­µÈ ¹ÙÀÎµù 
+	for (const auto& [È¸»ç, °ÔÀÓµé] : game) {
+		cout << È¸»ç << " - ";
+		for (const String& °ÔÀÓ : °ÔÀÓµé) {
+			cout << "\"" << °ÔÀÓ << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "¸ÊÀÇ ¿ø¼Ò ¼ö - " << game.size() << endl;
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/map Extract Key °ª º¯°æ.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	// °ÔÀÓÈ¸»ç¿Í Ãâ½ÃÀÛµé 
+	// Ãâ·Â?
+	// °ÔÀÓÀ» ´õ ³ÖÀ» ¼ö ÀÖÀ»±î?
+
+	// Key Value : Key ¸¦ ±âÁØÀ¸·Î default Á¤·Ä 
+	// map ÀÇ µ¥ÀÌÅÍ¸¦ pair ·Î ¿«¾î¼­ Á¦°øÇÏµµ·Ï µÇ¾îÀÖ´Ù. 
+	map<String, list<String>> game{
+		{"ÆŞ ¾îºñ½º", {"°ËÀº»ç¸·", "ºÓÀº »ç¸·", "µµ±úºñ"}},
+		{"´ÑÅÙµµ", {"Á©´ÙÀÇ Àü¼³", "½´ÆÛ ¸¶¸®¿À", "¸¶¸®¿À Ä«µå", "½ºÅ¸Æø½º"}}
+	};
+
+	/// ¿ø¼Ò Ãß°¡ 
+	game.insert(pair < String, list<String>> { "µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}});
+	//game.insert(make_pair("µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}) );  // ¼÷Á¦ µ¹¾Æ°¡°Ô ¸¸µé±â ( "µ¥ºê½Ã½ºÅÍÁö" string À¸·Î ³ª¿Ã ¼ö ÀÖ°Ô ¸¸µé±â 
+
+	///					map < È¸»ç (const) , °ÔÀÓ > - Key ´Â Á¤·ÄÀ» ÆÄ±«ÇÏ¸é ¾ÈµÇ¹Ç·Î constÀÌ´Ù
+	///				Node[µ¥ºê½Ã½º] -> [ ]  
+	///					¸¸¾à¿¡ key °ªÀ» ¹Ù²Ù°í ½Í´Ù¸é ? - ÀÌ ³ëµåÀÇ handleÀ» ¹Ş¾Æ¼­ ¹Ù²Û´Ù.  ( Extranct -> ¼öÁ¤ -> Áı¾î³Ö±â )
+	///
+	///				 ¢×				¢Ù
+	///			[´ÑÅÙµµ]	->[] ¡ê[]   [ÆŞ¾îºñ½º] -> [] ¡ê [] ¡ê []
+
+	/// ¸ÊÀÇ Å°°ªÀ» º¯°æÇÏ°í ½Í´Ù¸é extract ¸â¹ö¸¦ ÀÌ¿ëÇÑ´Ù. ( C++ 17 )
+	//auto Nodehandle = game.extract("´ÑÅÙµµ");
+	//Nodehandle.key() = "Nintendo";				/// ·¹ÆÛ·±½º¸¦ ¸®ÅÏÇÑ´Ù. 
+	//game.insert(std::move(Nodehandle));			/// std::move - static cast ÀÌ´Ù = static_cast<String&&>(Nodehandle) = std::move(Nodehandle)
+
+	/*
+		¹®Á¦ 
+			- ´ÑÅÙµµÀÇ "º°ÀÇ Ä¿ºñ"¸¦ Ãß°¡ÇÏ¶ó 
+	*/
+
+	map<String, list<String>>::iterator iter = game.find("´ÑÅÙµµ");
+	iter->second.push_back("º°ÀÇ Ä¿ºñ"); // ³ªÀÇ ÄÚµå 
+	//(iter->second).insert("º°ÀÇ Ä¿ºñ"); // ±³¼ö´Ô ÄÚµå 
+
+	///		int a[10];
+	///		a["´ÑÅÙµµ"] ¹è¿­À» ÀÎµ¦½º·Î ¼ıÀÚ°¡ ¾Æ´Ñ ´Ù¸¥ °ªÀ¸·Î ¾²´Â ¹è¿­À» 
+	///		' ¿¬°ü ¹è¿­ ' ÀÌ¶ó°í ÇÑ´Ù. - Associative Array 
+
+
+	/// ±³¼ö´ÔÀº operator[] À» ÀÌ¿ëÇÑ´Ù. 
+	String Key = "´ÑÅÙµµ";
+	list<String>& Value = game[Key]; /// => game.operator[]("´ÑÅÙµµ"); ¢¹ Å°°ªÀ» ÀÎµ¦½º·Î ÇØ¼­ °ªÀ» ¯´Â´Ù. 
+	Value.insert(Value.begin(), "º°ÀÇ Ä¿ºñ");
+
+	
+
+
+
+	// ±¸Á¶È­µÈ ¹ÙÀÎµù 
+	for (const auto& [È¸»ç, °ÔÀÓµé] : game) {
+		cout << È¸»ç << " - ";
+		for (const String& °ÔÀÓ : °ÔÀÓµé) {
+			cout << "\"" << °ÔÀÓ << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "¸ÊÀÇ ¿ø¼Ò ¼ö - " << game.size() << endl;
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/´ÑÅÙµµ¿¡ º°ÀÇÄ¿ºñ ³Ö±â (operator[]»ç¿ë).txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	// °ÔÀÓÈ¸»ç¿Í Ãâ½ÃÀÛµé 
+	// Ãâ·Â?
+	// °ÔÀÓÀ» ´õ ³ÖÀ» ¼ö ÀÖÀ»±î?
+
+	// Key Value : Key ¸¦ ±âÁØÀ¸·Î default Á¤·Ä 
+	// map ÀÇ µ¥ÀÌÅÍ¸¦ pair ·Î ¿«¾î¼­ Á¦°øÇÏµµ·Ï µÇ¾îÀÖ´Ù. 
+	map<String, list<String>> game{
+		{"ÆŞ ¾îºñ½º", {"°ËÀº»ç¸·", "ºÓÀº »ç¸·", "µµ±úºñ"}},
+		{"´ÑÅÙµµ", {"Á©´ÙÀÇ Àü¼³", "½´ÆÛ ¸¶¸®¿À", "¸¶¸®¿À Ä«µå", "½ºÅ¸Æø½º"}}
+	};
+
+	/// ¿ø¼Ò Ãß°¡ 
+	game.insert(pair < String, list<String>> { "µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}});
+	//game.insert(make_pair("µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}) );  // ¼÷Á¦ µ¹¾Æ°¡°Ô ¸¸µé±â ( "µ¥ºê½Ã½ºÅÍÁö" string À¸·Î ³ª¿Ã ¼ö ÀÖ°Ô ¸¸µé±â 
+
+	///					map < È¸»ç (const) , °ÔÀÓ > - Key ´Â Á¤·ÄÀ» ÆÄ±«ÇÏ¸é ¾ÈµÇ¹Ç·Î constÀÌ´Ù
+	///				Node[µ¥ºê½Ã½º] -> [ ]  
+	///					¸¸¾à¿¡ key °ªÀ» ¹Ù²Ù°í ½Í´Ù¸é ? - ÀÌ ³ëµåÀÇ handleÀ» ¹Ş¾Æ¼­ ¹Ù²Û´Ù.  ( Extranct -> ¼öÁ¤ -> Áı¾î³Ö±â )
+	///
+	///				 ¢×				¢Ù
+	///			[´ÑÅÙµµ]	->[] ¡ê[]   [ÆŞ¾îºñ½º] -> [] ¡ê [] ¡ê []
+
+	/// ¸ÊÀÇ Å°°ªÀ» º¯°æÇÏ°í ½Í´Ù¸é extract ¸â¹ö¸¦ ÀÌ¿ëÇÑ´Ù. ( C++ 17 )
+	//auto Nodehandle = game.extract("´ÑÅÙµµ");
+	//Nodehandle.key() = "Nintendo";				/// ·¹ÆÛ·±½º¸¦ ¸®ÅÏÇÑ´Ù. 
+	//game.insert(std::move(Nodehandle));			/// std::move - static cast ÀÌ´Ù = static_cast<String&&>(Nodehandle) = std::move(Nodehandle)
+
+	/*
+		¹®Á¦ 
+			- ´ÑÅÙµµÀÇ "º°ÀÇ Ä¿ºñ"¸¦ Ãß°¡ÇÏ¶ó 
+	*/
+
+	//map<String, list<String>>::iterator iter = game.find("´ÑÅÙµµ");
+	//iter->second.push_back("º°ÀÇ Ä¿ºñ"); // ³ªÀÇ ÄÚµå 
+	//(iter->second).insert("º°ÀÇ Ä¿ºñ"); // ±³¼ö´Ô ÄÚµå 
+
+	///		int a[10];
+	///		a["´ÑÅÙµµ"] ¹è¿­À» ÀÎµ¦½º·Î ¼ıÀÚ°¡ ¾Æ´Ñ ´Ù¸¥ °ªÀ¸·Î ¾²´Â ¹è¿­À» 
+	///		' ¿¬°ü ¹è¿­ ' ÀÌ¶ó°í ÇÑ´Ù. - Associative Array 
+
+
+	/// ±³¼ö´ÔÀº operator[] À» ÀÌ¿ëÇÑ´Ù. 
+	String Key = "´ÑÅÙµµ";
+	list<String>& Value = game[Key]; /// => game.operator[]("´ÑÅÙµµ"); ¢¹ Å°°ªÀ» ÀÎµ¦½º·Î ÇØ¼­ °ªÀ» ¯´Â´Ù. 
+	Value.insert(Value.begin(), "º°ÀÇ Ä¿ºñ");
+
+	
+
+
+
+	// ±¸Á¶È­µÈ ¹ÙÀÎµù 
+	for (const auto& [È¸»ç, °ÔÀÓµé] : game) {
+		cout << È¸»ç << " - ";
+		for (const String& °ÔÀÓ : °ÔÀÓµé) {
+			cout << "\"" << °ÔÀÓ << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "¸ÊÀÇ ¿ø¼Ò ¼ö - " << game.size() << endl;
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/´ÑÅÙµµ¿¡ º°ÀÇÄ¿ºñ ³Ö±â (operator[]»ç¿ë).txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ¹®ÀÚ¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+
+	/// ÆÄÀÏ ÀĞ±â 
+	char c;
+	while (in >> c) {
+		cimap[c]++;  /// c ¶ó°í ÇÏ´Â ¹®ÀÚ°¡ Å°°ªÀ¸·Î Àü´ŞµÈ´Ù. -> Value(int) ++ µÊ 
+	
+
+	}
+
+	for (auto [¹®ÀÚ, °³¼ö] : cimap) {
+		cout << ¹®ÀÚ << " - " << °³¼ö << endl;
+
+	}
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/ÀÌ»óÇÑ³ª¶ó¾Ù¸®½ºÆÄÀÏ¿¡¼­ ¹®ÀÚ °³¼ö »Ì±âmapÀÌ¿ë.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ¹®ÀÚ¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+
+	map<int, char> testmap;
+
+
+	/// ÆÄÀÏ ÀĞ±â 
+	char c;
+	while (in >> c) {
+		cimap[c]++;  /// c ¶ó°í ÇÏ´Â ¹®ÀÚ°¡ Å°°ªÀ¸·Î Àü´ŞµÈ´Ù. -> Value(int) ++ µÊ 
+	}
+
+	for (auto [¹®ÀÚ, °³¼ö] : cimap) {
+		testmap.insert(pair(°³¼ö, ¹®ÀÚ));
+		cout << ¹®ÀÚ << " - " << °³¼ö << endl;
+	}
+
+	for (auto [°³¼ö, ¹®ÀÚ] : testmap) {
+		cout << °³¼ö << " - " << ¹®ÀÚ << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/ÀÌ»óÇÑ³ª¶ó¾Ù¸®½ºÆÄÀÏ¿¡¼­ ¹®ÀÚ °³¼ö »Ì±âmapÀÌ¿ë.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ¹®ÀÚ¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+
+	map<int, char> testmap;
+
+
+	/// ÆÄÀÏ ÀĞ±â 
+	char c;
+	while (in >> c) {
+		cimap[c]++;  /// c ¶ó°í ÇÏ´Â ¹®ÀÚ°¡ Å°°ªÀ¸·Î Àü´ŞµÈ´Ù. -> Value(int) ++ µÊ 
+	}
+
+	for (auto [¹®ÀÚ, °³¼ö] : cimap) {
+		testmap.insert(pair(°³¼ö, ¹®ÀÚ));
+		//cout << ¹®ÀÚ << " - " << °³¼ö << endl;
+	}
+
+	for (auto [°³¼ö, ¹®ÀÚ] : testmap) {
+		cout << °³¼ö << " - " << ¹®ÀÚ << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/ÀÌ»óÇÑ³ª¶ó¾Ù¸®½ºÆÄÀÏ¿¡¼­ ¹®ÀÚ °³¼ö »Ì±âmapÀÌ¿ë.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ¹®ÀÚ¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+
+	map<int, char, greater<int>> testmap;
+
+
+	/// ÆÄÀÏ ÀĞ±â 
+	char c;
+	while (in >> c) {
+		cimap[c]++;  /// c ¶ó°í ÇÏ´Â ¹®ÀÚ°¡ Å°°ªÀ¸·Î Àü´ŞµÈ´Ù. -> Value(int) ++ µÊ 
+	}
+
+	for (auto [¹®ÀÚ, °³¼ö] : cimap) {
+		testmap.insert(pair(°³¼ö, ¹®ÀÚ));
+		//cout << ¹®ÀÚ << " - " << °³¼ö << endl;
+	}
+
+	for (auto [°³¼ö, ¹®ÀÚ] : testmap) {
+		cout << °³¼ö << " - " << ¹®ÀÚ << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/ÀÌ»óÇÑ³ª¶ó¾Ù¸®½ºÆÄÀÏ¿¡¼­ ¹®ÀÚ °³¼ö »Ì±âmapÀÌ¿ë.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ¹®ÀÚ¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+
+	map<int, char, greater<int>> testmap;
+
+
+	/// ÆÄÀÏ ÀĞ±â 
+	char c;
+	while (in >> c) {
+		cimap[c]++;  /// c ¶ó°í ÇÏ´Â ¹®ÀÚ°¡ Å°°ªÀ¸·Î Àü´ŞµÈ´Ù. -> Value(int) ++ µÊ 
+	}
+
+	for (auto [¹®ÀÚ, °³¼ö] : cimap) {
+		testmap.insert(pair(°³¼ö, ¹®ÀÚ));
+		//cout << ¹®ÀÚ << " - " << °³¼ö << endl;
+	}
+
+	for (auto [°³¼ö, ¹®ÀÚ] : testmap) {
+		cout << °³¼ö << " - " << ¹®ÀÚ << endl;
+
+	}
+	
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦ ¿À¸§Â÷¼øÀ¸·Î ÀÌ»óÇÑ³ª¶ó¾Ù¸®½º¹®ÀÚ »Ì±â.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ¹®ÀÚ¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+
+	map<int, char, greater<int>> testmap;
+
+
+	/// ÆÄÀÏ ÀĞ±â 
+	char c;
+	while (in >> c) {
+		if (isalpha(c))
+		cimap[c]++;  /// c ¶ó°í ÇÏ´Â ¹®ÀÚ°¡ Å°°ªÀ¸·Î Àü´ŞµÈ´Ù. -> Value(int) ++ µÊ 
+	}
+
+	for (auto [¹®ÀÚ, °³¼ö] : cimap) {
+		testmap.insert(pair(°³¼ö, ¹®ÀÚ));
+		//cout << ¹®ÀÚ << " - " << °³¼ö << endl;
+	}
+
+	for (auto [°³¼ö, ¹®ÀÚ] : testmap) {
+		cout << °³¼ö << " - " << ¹®ÀÚ << endl;
+
+	}
+
+	/// ±³¼ö´Ô ÄÚµå 
+	
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦ ¿À¸§Â÷¼øÀ¸·Î ÀÌ»óÇÑ³ª¶ó¾Ù¸®½º¹®ÀÚ »Ì±â - ±³¼ö´Ô ÄÚµå.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ¹®ÀÚ¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<char, int, greater<int>> cimap;
+
+	map<int, char, greater<int>> testmap;
+
+
+	/// ÆÄÀÏ ÀĞ±â 
+	char c;
+	while (in >> c) {
+		if (isalpha(c))
+			cimap[c]++;  /// c ¶ó°í ÇÏ´Â ¹®ÀÚ°¡ Å°°ªÀ¸·Î Àü´ŞµÈ´Ù. -> Value(int) ++ µÊ 
+	}
+
+	for (auto [¹®ÀÚ, °³¼ö] : cimap) {
+		testmap.insert(pair(°³¼ö, ¹®ÀÚ));
+		cout << ¹®ÀÚ << " - " << °³¼ö << endl;
+	}
+
+	for (auto [°³¼ö, ¹®ÀÚ] : testmap) {
+		//cout << °³¼ö << " - " << ¹®ÀÚ << endl;
+
+	}
+
+	/// ±³¼ö´Ô ÄÚµå 
+	
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦ ¿À¸§Â÷¼øÀ¸·Î ÀÌ»óÇÑ³ª¶ó¾Ù¸®½º¹®ÀÚ »Ì±â - ±³¼ö´Ô ÄÚµå.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ¹®ÀÚ¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+	//map<int, char, greater<int>> testmap;
+
+
+	/// ÆÄÀÏ ÀĞ±â 
+	char c;
+	while (in >> c) {
+		if (isalpha(c))
+			cimap[c]++;  /// c ¶ó°í ÇÏ´Â ¹®ÀÚ°¡ Å°°ªÀ¸·Î Àü´ŞµÈ´Ù. -> Value(int) ++ µÊ 
+	}
+
+	//for (auto [¹®ÀÚ, °³¼ö] : cimap) {
+	//	testmap.insert(pair(°³¼ö, ¹®ÀÚ));
+	//	//cout << ¹®ÀÚ << " - " << °³¼ö << endl;
+	//}
+
+	//for (auto [°³¼ö, ¹®ÀÚ] : testmap) {
+	//	cout << °³¼ö << " - " << ¹®ÀÚ << endl;
+
+	//}
+
+	/// ±³¼ö´Ô ÄÚµå 
+	/// [ ¹®Á¦ ] - °¹¼ö°¡ ¸¹Àº ¼ø¼­·Î Ãâ·ÂÇØ ÁÖ¼¼¿ä 
+	vector<pair<char, int>> V{ cimap.begin(), cimap.end() };
+	sort(V.begin(), V.end(), [](const auto& lhs, const auto& rhs) {
+		return lhs.second > rhs.second;
+		});
+
+	for (auto [Char, Cnt] : V) {
+		cout << Cnt << " - " << Char << endl;
+	}
+
+	
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦ ¿À¸§Â÷¼øÀ¸·Î ÀÌ»óÇÑ³ª¶ó¾Ù¸®½º¹®ÀÚ »Ì±â - ±³¼ö´Ô ÄÚµå.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ¹®ÀÚ¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+	//map<int, char, greater<int>> testmap;
+
+
+	/// ÆÄÀÏ ÀĞ±â 
+	char c;
+	while (in >> c) {
+		if (isalpha(c))
+			cimap[c]++;  /// c ¶ó°í ÇÏ´Â ¹®ÀÚ°¡ Å°°ªÀ¸·Î Àü´ŞµÈ´Ù. -> Value(int) ++ µÊ 
+	}
+
+	//for (auto [¹®ÀÚ, °³¼ö] : cimap) {
+	//	testmap.insert(pair(°³¼ö, ¹®ÀÚ));
+	//	//cout << ¹®ÀÚ << " - " << °³¼ö << endl;
+	//}
+
+	//for (auto [°³¼ö, ¹®ÀÚ] : testmap) {
+	//	cout << °³¼ö << " - " << ¹®ÀÚ << endl;
+
+	//}
+
+	/// 1. ±³¼ö´Ô ÄÚµå 
+	/// [ ¹®Á¦ ] - °¹¼ö°¡ ¸¹Àº ¼ø¼­·Î Ãâ·ÂÇØ ÁÖ¼¼¿ä 
+	vector<pair<char, int>> V{ cimap.begin(), cimap.end() };
+	sort(V.begin(), V.end(), [](const auto& lhs, const auto& rhs) {
+		return lhs.second > rhs.second;
+		});
+
+	for (auto [Char, Cnt] : V) {
+		cout << Cnt << " - " << Char << endl;
+	}
+
+	/// 2. ±³¼ö´Ô ÄÚµå 
+	multimap<int, char, greater<int>> icmap;
+	for (auto [Char, Cnt] : cimap) {
+		icmap.insert(make_pair(Cnt, Char));
+
+	}
+	
+	///  map ¾È¿¡¼­ Á¤·ÄÀÌ ¾ÈµÇ´Ï±î
+	///  ÄÁÅ×ÀÌ³Ê¸¦ ¿Å°Ü¼­ Á¤·ÄÇÏ´Â ¹ß»óÀÇ ÀüÈ¯À» ÇØºÃ³Ä??
+
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦ ¿À¸§Â÷¼øÀ¸·Î ÀÌ»óÇÑ³ª¶ó¾Ù¸®½º¹®ÀÚ »Ì±â - ±³¼ö´Ô ÄÚµå.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ´Ü¾î¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<String, int> Simap;
+
+	String word;
+	while (in >> word) {
+		Simap[word]++;
+	}
+
+	for (auto& [Word, Cnt] : Simap) {
+		cout << " Word : " << Word << " - " << "Cnt : " << Cnt << endl;
+
+	}
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦ ¿À¸§Â÷¼øÀ¸·Î ÀÌ»óÇÑ³ª¶ó¾Ù¸®½º '´Ü¾î' »Ì±â.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ´Ü¾î¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<String, int> Simap;
+
+	String word;
+	while (in >> word) {
+		Simap[word]++;
+	}
+
+	for (auto& [Word, Cnt] : Simap) {
+		cout << " Word : " << Word << "\t - " << "Cnt : " << Cnt << endl;
+
+	}
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦ ¿À¸§Â÷¼øÀ¸·Î ÀÌ»óÇÑ³ª¶ó¾Ù¸®½º '´Ü¾î' »Ì±â.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <ranges>
+#include <utility>
+#include <UIViewSettingsInterop.h>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	/// [ ¹®Á¦ ] - "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" ¿¡ »ç¿ëµÈ ´Ü¾î¿Í »ç¿ëµÈ È½¼ö¸¦ Ãâ·ÂÇÏ¶ó. 
+	
+	ifstream in{ "ÀÌ»óÇÑ ³ª¶óÀÇ ¾Ù¸®½º.txt" };
+	if (!in) exit(0);
+
+	map<String, int> Simap;
+
+	/// ±³¼ö´Ô ÄÚµå  
+	String word;
+	while (in >> word) {
+		Simap[word]++;
+	}
+
+	/// ¸¹ÀÌ »ç¿ëµÈ ´Ü¾î ±âÁØ ³»¸²Â÷¼ø Ãâ·Â
+	multimap<int, String, greater<int>> ismap;
+	for (auto& [´Ü¾î, °³¼ö] : Simap) {
+		ismap.insert(make_pair(°³¼ö, ´Ü¾î));
+	}
+	
+
+
+	//for (auto& [Word, Cnt] : Simap[ std::ranges::views::take(100)]) {
+	//	//cout << " Word : " << Word <<  << "Cnt : " << Cnt << endl;
+	//	cout << Cnt << " - " << Word << endl;
+	//}
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦ ¿À¸§Â÷¼øÀ¸·Î ÀÌ»óÇÑ³ª¶ó¾Ù¸®½º '´Ü¾î' »Ì±â - ±³¼ö´Ô ÄÚµå.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <ranges>
+#include <utility>
+#include <random>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+default_random_engine dre;
+uniform_int_distribution uid{ 1, 10'0000 };
+
+int main()
+{
+	///	[¹®Á¦] - uniform ºĞÆ÷°¡ ÁøÂ¥ unfirom ÇÑÁö °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó.
+	/// ±¸°£À» 10 µîºĞÇØ¼­ °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó 
+
+	map< int, int > iimap; 
+
+	for (int i = 0; i < 10'0000; ++i) {
+		int num = uid(dre);
+		iimap[num / 10'000]++;
+	}
+
+	for (auto [±¸°£, °³¼ö] : iimap) {
+		cout << ±¸°£ << " - " << °³¼ö << endl;
+
+	}
+
+
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦2 unfirom ºĞÆ÷°¡ ÁøÂ¥ uniform ÇÑÁö °³¼ö¼¼±â - ±³¼ö´Ô.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <ranges>
+#include <utility>
+#include <random>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+default_random_engine dre;
+uniform_int_distribution uid{ 1, 10'0000 };
+
+int main()
+{
+	///	[¹®Á¦] - uniform ºĞÆ÷°¡ ÁøÂ¥ unfirom ÇÑÁö °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó.
+	/// ±¸°£À» 10 µîºĞÇØ¼­ °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó 
+
+	map< int, int > iimap; 
+
+	for (int i = 0; i < 10'000000; ++i) {
+		int num = uid(dre);
+		iimap[num / 10'000]++;
+	}
+
+	for (auto [±¸°£, °³¼ö] : iimap) {
+		cout << ±¸°£ << " - " << °³¼ö << endl;
+
+	}
+
+
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦2 unfirom ºĞÆ÷°¡ ÁøÂ¥ uniform ÇÑÁö °³¼ö¼¼±â - ±³¼ö´Ô.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <ranges>
+#include <utility>
+#include <random>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+default_random_engine dre;
+//uniform_int_distribution uid{ 1, 10'0000 };
+normal_distribution uid{/*Æò±Õ°ª*/0.0f , /*ºĞ»ê°ª(ÆÛÁö´Â Á¤µµ)*/3.0f };
+
+int main()
+{
+	///	[¹®Á¦] - uniform ºĞÆ÷°¡ ÁøÂ¥ unfirom ÇÑÁö °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó.
+	/// ±¸°£À» 10 µîºĞÇØ¼­ °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó 
+
+	map< int, int > iimap; 
+
+	for (int i = 0; i < 10; ++i) {
+		cout << uid(dre) << endl;
+	}
+
+	
+
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦2 unfirom ºĞÆ÷°¡ ÁøÂ¥ uniform ÇÑÁö °³¼ö¼¼±â - ±³¼ö´Ô_ normal_distributionÀÌ¿ë.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <ranges>
+#include <utility>
+#include <random>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+default_random_engine dre;
+//uniform_int_distribution uid{ 1, 10'0000 };
+normal_distribution uid{/*Æò±Õ°ª*/0.0f , /*ºĞ»ê°ª(ÆÛÁö´Â Á¤µµ)*/3.0f };
+
+int main()
+{
+	///	[¹®Á¦] - uniform ºĞÆ÷°¡ ÁøÂ¥ unfirom ÇÑÁö °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó.
+	/// ±¸°£À» 10 µîºĞÇØ¼­ °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó 
+
+	map< int, int > iimap; 
+
+	for (int i = 0; i < 10; ++i) {
+		int num = uid(dre) + 50'000 + 50'000 ; // -1 ~ 1
+		cout << num << endl;
+		//iimap[num / 10'000] ++;
+	}
+
+	
+
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦2 unfirom ºĞÆ÷°¡ ÁøÂ¥ uniform ÇÑÁö °³¼ö¼¼±â - ±³¼ö´Ô_ normal_distributionÀÌ¿ë.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <ranges>
+#include <utility>
+#include <random>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+default_random_engine dre;
+//uniform_int_distribution uid{ 1, 10'0000 };
+normal_distribution uid{/*Æò±Õ°ª*/0.0f , /*ºĞ»ê°ª(ÆÛÁö´Â Á¤µµ)*/3.0f };
+
+int main()
+{
+	///	[¹®Á¦] - uniform ºĞÆ÷°¡ ÁøÂ¥ unfirom ÇÑÁö °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó.
+	/// ±¸°£À» 10 µîºĞÇØ¼­ °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó 
+
+	map< int, int > iimap; 
+
+	for (int i = 0; i < 1'000'000; ++i) {
+		int num = uid(dre) + 50'000 + 50'000 ; // -1 ~ 1
+		//cout << num << endl;
+		iimap[num / 10'000] ++;
+	}
+
+	for (auto [±¸°£, °³¼ö] : iimap) {
+		cout << °³¼ö << endl;
+	}
+
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦2 unfirom ºĞÆ÷°¡ ÁøÂ¥ uniform ÇÑÁö °³¼ö¼¼±â - ±³¼ö´Ô_ normal_distributionÀÌ¿ë.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <ranges>
+#include <utility>
+#include <random>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+default_random_engine dre;
+//uniform_int_distribution uid{ 1, 10'0000 };
+normal_distribution uid{/*Æò±Õ°ª*/0.0f , /*ºĞ»ê°ª(ÆÛÁö´Â Á¤µµ)*/3.0f };
+
+int main()
+{
+	///	[¹®Á¦] - uniform ºĞÆ÷°¡ ÁøÂ¥ unfirom ÇÑÁö °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó.
+	/// ±¸°£À» 10 µîºĞÇØ¼­ °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó 
+
+	map< int, int > iimap; 
+
+	for (int i = 0; i < 1'000'000; ++i) {
+		int num = uid(dre) * 50'000 + 50'000 ; // -1 ~ 1
+
+		if( 0 <= num && num <= 100'000)
+			iimap[num / 2'000]++;
+	}
+
+	for (auto [±¸°£, °³¼ö] : iimap) {
+		cout << °³¼ö << endl;
+	}
+
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦2 unfirom ºĞÆ÷°¡ ÁøÂ¥ uniform ÇÑÁö °³¼ö¼¼±â - ±³¼ö´Ô_ normal_distributionÀÌ¿ë.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <ranges>
+#include <utility>
+#include <random>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+default_random_engine dre;
+//uniform_int_distribution uid{ 1, 10'0000 };
+normal_distribution uid{/*Æò±Õ°ª*/0.0f , /*ºĞ»ê°ª(ÆÛÁö´Â Á¤µµ)*/0.05f };
+
+int main()
+{
+	///	[¹®Á¦] - uniform ºĞÆ÷°¡ ÁøÂ¥ unfirom ÇÑÁö °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó.
+	/// ±¸°£À» 10 µîºĞÇØ¼­ °³¼ö¸¦ ¼¼¼­ Ãâ·ÂÇÏ¶ó 
+
+	map< int, int > iimap; 
+
+	for (int i = 0; i < 1'000'000; ++i) {
+		int num = uid(dre) * 50'000 + 50'000 ; // -1 ~ 1
+
+		if( 0 < num && num < 100'000)
+			iimap[num / 2'000]++;
+	}
+
+	for (auto [±¸°£, °³¼ö] : iimap) {
+		cout << °³¼ö << endl;
+	}
+
+
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/¹®Á¦2 unfirom ºĞÆ÷°¡ ÁøÂ¥ uniform ÇÑÁö °³¼ö¼¼±â - ±³¼ö´Ô_ normal_distributionÀÌ¿ë.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif

@@ -1,0 +1,61 @@
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <ranges>
+#include <utility>
+#include <UIViewSettingsInterop.h>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	5/29 - 월 - 13즈 1일 동영상
+	6/6  - 화 - 14즈 2일 - 동영상
+	6/13 - 화 - 15주 2일 기말시험
+	6/20 - 월 - 성적게시 
+	
+*/
+
+int main()
+{
+	/// [ 문제 ] - "이상한 나라의 앨리스.txt" 에 사용된 단어와 사용된 횟수를 출력하라. 
+	
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in) exit(0);
+
+	map<String, int> Simap;
+
+	/// 교수님 코드  
+	String word;
+	while (in >> word) {
+		Simap[word]++;
+	}
+
+	/// 많이 사용된 단어 기준 내림차순 출력
+	multimap<int, String, greater<int>> ismap;
+	for (auto& [단어, 개수] : Simap) {
+		ismap.insert(make_pair(개수, 단어));
+	}
+	
+
+
+	//for (auto& [Word, Cnt] : Simap[ std::ranges::views::take(100)]) {
+	//	//cout << " Word : " << Word <<  << "Cnt : " << Cnt << endl;
+	//	cout << Cnt << " - " << Word << endl;
+	//}
+
+	MySaveFileCode::Save_File("12주차 자료/12주차_1.cpp", "12주차 자료/문제 오름차순으로 이상한나라앨리스 '단어' 뽑기 - 교수님 코드.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif

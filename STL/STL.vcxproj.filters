@@ -88,6 +88,9 @@
     <ClCompile Include="11주차 자료\11주차_2.cpp">
       <Filter>STL공부자료\5월</Filter>
     </ClCompile>
+    <ClCompile Include="12주차 자료\12주차_1.cpp">
+      <Filter>STL공부자료\5월</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="save.h">

@@ -1,0 +1,157 @@
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	5/29 - 월 - 13즈 1일 동영상
+	6/6  - 화 - 14즈 2일 - 동영상
+	6/13 - 화 - 15주 2일 기말시험
+	6/20 - 월 - 성적게시 
+	
+*/
+
+int main()
+{
+	// 게임회사와 출시작들 
+	// 출력?
+	// 게임을 더 넣을 수 있을까?
+
+	// Key Value : Key 를 기준으로 default 정렬 
+	// map 의 데이터를 pair 로 엮어서 제공하도록 되어있다. 
+	map<String, list<String>> game{
+		{"펄 어비스", {"검은사막", "붉은 사막", "도깨비"}},
+		{"닌텐도", {"젤다의 전설", "슈퍼 마리오", "마리오 카드", "스타폭스"}}
+	};
+
+	/// 원소 추가 
+	game.insert(pair < String, list<String>> { "데브시스터즈", {"쿠키런오븐브레이크"}});
+	//game.insert(make_pair("데브시스터즈", {"쿠키런오븐브레이크"}) );  // 숙제 돌아가게 만들기 ( "데브시스터지" string 으로 나올 수 있게 만들기 
+
+	///					map < 회사 (const) , 게임 > - Key 는 정렬을 파괴하면 안되므로 const이다
+	///				Node[데브시스] -> [ ]  
+	///					만약에 key 값을 바꾸고 싶다면 ? - 이 노드의 handle을 받아서 바꾼다.  ( Extranct -> 수정 -> 집어넣기 )
+	///
+	///				 ↙				↘
+	///			[닌텐도]	->[] ↔[]   [펄어비스] -> [] ↔ [] ↔ []
+
+	/// 맵의 키값을 변경하고 싶다면 extract 멤버를 이용한다. ( C++ 17 )
+	auto Nodehandle = game.extract("닌텐도");
+	Nodehandle.key() = "Nintendo";				// 레퍼런스를 리턴한다. 
+	game.insert(std::move(Nodehandle)); // std::move - static cast 이다 = static_cast<String&&>(Nodehandle) = std::move(Nodehandle)
+
+	/*
+		문제 : 
+	*/
+	
+
+
+	// 구조화된 바인딩 
+	for (const auto& [회사, 게임들] : game) {
+		cout << 회사 << " - ";
+		for (const String& 게임 : 게임들) {
+			cout << "\"" << 게임 << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "맵의 원소 수 - " << game.size() << endl;
+	MySaveFileCode::Save_File("12주차 자료/12주차_1.cpp", "12주차 자료/map Extract Key 값 변경.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	5/29 - 월 - 13즈 1일 동영상
+	6/6  - 화 - 14즈 2일 - 동영상
+	6/13 - 화 - 15주 2일 기말시험
+	6/20 - 월 - 성적게시 
+	
+*/
+
+int main()
+{
+	// 게임회사와 출시작들 
+	// 출력?
+	// 게임을 더 넣을 수 있을까?
+
+	// Key Value : Key 를 기준으로 default 정렬 
+	// map 의 데이터를 pair 로 엮어서 제공하도록 되어있다. 
+	map<String, list<String>> game{
+		{"펄 어비스", {"검은사막", "붉은 사막", "도깨비"}},
+		{"닌텐도", {"젤다의 전설", "슈퍼 마리오", "마리오 카드", "스타폭스"}}
+	};
+
+	/// 원소 추가 
+	game.insert(pair < String, list<String>> { "데브시스터즈", {"쿠키런오븐브레이크"}});
+	//game.insert(make_pair("데브시스터즈", {"쿠키런오븐브레이크"}) );  // 숙제 돌아가게 만들기 ( "데브시스터지" string 으로 나올 수 있게 만들기 
+
+	///					map < 회사 (const) , 게임 > - Key 는 정렬을 파괴하면 안되므로 const이다
+	///				Node[데브시스] -> [ ]  
+	///					만약에 key 값을 바꾸고 싶다면 ? - 이 노드의 handle을 받아서 바꾼다.  ( Extranct -> 수정 -> 집어넣기 )
+	///
+	///				 ↙				↘
+	///			[닌텐도]	->[] ↔[]   [펄어비스] -> [] ↔ [] ↔ []
+
+	/// 맵의 키값을 변경하고 싶다면 extract 멤버를 이용한다. ( C++ 17 )
+	//auto Nodehandle = game.extract("닌텐도");
+	//Nodehandle.key() = "Nintendo";				/// 레퍼런스를 리턴한다. 
+	//game.insert(std::move(Nodehandle));			/// std::move - static cast 이다 = static_cast<String&&>(Nodehandle) = std::move(Nodehandle)
+
+	/*
+		문제 
+			- 닌텐도의 "별의 커비"를 추가하라 
+	*/
+
+	map<String, list<String>>::iterator iter = game.find("닌텐도");
+	iter->second.push_back("별의 커비");
+
+
+	
+
+
+
+	// 구조화된 바인딩 
+	for (const auto& [회사, 게임들] : game) {
+		cout << 회사 << " - ";
+		for (const String& 게임 : 게임들) {
+			cout << "\"" << 게임 << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "맵의 원소 수 - " << game.size() << endl;
+	MySaveFileCode::Save_File("12주차 자료/12주차_1.cpp", "12주차 자료/map Extract Key 값 변경.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif

@@ -1,0 +1,184 @@
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	// °ÔÀÓÈ¸»ç¿Í Ãâ½ÃÀÛµé 
+	// Ãâ·Â?
+	// °ÔÀÓÀ» ´õ ³ÖÀ» ¼ö ÀÖÀ»±î?
+
+	// Key Value : Key ¸¦ ±âÁØÀ¸·Î default Á¤·Ä 
+	// map ÀÇ µ¥ÀÌÅÍ¸¦ pair ·Î ¿«¾î¼­ Á¦°øÇÏµµ·Ï µÇ¾îÀÖ´Ù. 
+	map<String, list<String>> game{
+		{"ÆŞ ¾îºñ½º", {"°ËÀº»ç¸·", "ºÓÀº »ç¸·", "µµ±úºñ"}},
+		{"´ÑÅÙµµ", {"Á©´ÙÀÇ Àü¼³", "½´ÆÛ ¸¶¸®¿À", "¸¶¸®¿À Ä«µå", "½ºÅ¸Æø½º"}}
+	};
+
+	/// ¿ø¼Ò Ãß°¡ 
+	game.insert(pair < String, list<String>> { "µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}});
+	//game.insert(make_pair("µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}) );  // ¼÷Á¦ µ¹¾Æ°¡°Ô ¸¸µé±â ( "µ¥ºê½Ã½ºÅÍÁö" string À¸·Î ³ª¿Ã ¼ö ÀÖ°Ô ¸¸µé±â 
+
+	///					map < È¸»ç (const) , °ÔÀÓ > - Key ´Â Á¤·ÄÀ» ÆÄ±«ÇÏ¸é ¾ÈµÇ¹Ç·Î constÀÌ´Ù
+	///				Node[µ¥ºê½Ã½º] -> [ ]  
+	///					¸¸¾à¿¡ key °ªÀ» ¹Ù²Ù°í ½Í´Ù¸é ? - ÀÌ ³ëµåÀÇ handleÀ» ¹Ş¾Æ¼­ ¹Ù²Û´Ù.  ( Extranct -> ¼öÁ¤ -> Áı¾î³Ö±â )
+	///
+	///				 ¢×				¢Ù
+	///			[´ÑÅÙµµ]	->[] ¡ê[]   [ÆŞ¾îºñ½º] -> [] ¡ê [] ¡ê []
+
+	/// ¸ÊÀÇ Å°°ªÀ» º¯°æÇÏ°í ½Í´Ù¸é extract ¸â¹ö¸¦ ÀÌ¿ëÇÑ´Ù. ( C++ 17 )
+	//auto Nodehandle = game.extract("´ÑÅÙµµ");
+	//Nodehandle.key() = "Nintendo";				/// ·¹ÆÛ·±½º¸¦ ¸®ÅÏÇÑ´Ù. 
+	//game.insert(std::move(Nodehandle));			/// std::move - static cast ÀÌ´Ù = static_cast<String&&>(Nodehandle) = std::move(Nodehandle)
+
+	/*
+		¹®Á¦ 
+			- ´ÑÅÙµµÀÇ "º°ÀÇ Ä¿ºñ"¸¦ Ãß°¡ÇÏ¶ó 
+	*/
+
+	map<String, list<String>>::iterator iter = game.find("´ÑÅÙµµ");
+	iter->second.push_back("º°ÀÇ Ä¿ºñ"); // ³ªÀÇ ÄÚµå 
+	//(iter->second).insert("º°ÀÇ Ä¿ºñ"); // ±³¼ö´Ô ÄÚµå 
+
+	///		int a[10];
+	///		a["´ÑÅÙµµ"] ¹è¿­À» ÀÎµ¦½º·Î ¼ıÀÚ°¡ ¾Æ´Ñ ´Ù¸¥ °ªÀ¸·Î ¾²´Â ¹è¿­À» 
+	///		' ¿¬°ü ¹è¿­ ' ÀÌ¶ó°í ÇÑ´Ù. - Associative Array 
+
+
+	/// ±³¼ö´ÔÀº operator[] À» ÀÌ¿ëÇÑ´Ù. 
+	String Key = "´ÑÅÙµµ";
+	list<String>& Value = game[Key]; /// => game.operator[]("´ÑÅÙµµ"); ¢¹ Å°°ªÀ» ÀÎµ¦½º·Î ÇØ¼­ °ªÀ» ¯´Â´Ù. 
+	Value.insert(Value.begin(), "º°ÀÇ Ä¿ºñ");
+
+	
+
+
+
+	// ±¸Á¶È­µÈ ¹ÙÀÎµù 
+	for (const auto& [È¸»ç, °ÔÀÓµé] : game) {
+		cout << È¸»ç << " - ";
+		for (const String& °ÔÀÓ : °ÔÀÓµé) {
+			cout << "\"" << °ÔÀÓ << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "¸ÊÀÇ ¿ø¼Ò ¼ö - " << game.size() << endl;
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/´ÑÅÙµµ¿¡ º°ÀÇÄ¿ºñ ³Ö±â (operator[]»ç¿ë).txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool °üÂû;
+
+/*
+	5/29 - ¿ù - 13Áî 1ÀÏ µ¿¿µ»ó
+	6/6  - È­ - 14Áî 2ÀÏ - µ¿¿µ»ó
+	6/13 - È­ - 15ÁÖ 2ÀÏ ±â¸»½ÃÇè
+	6/20 - ¿ù - ¼ºÀû°Ô½Ã 
+	
+*/
+
+int main()
+{
+	// °ÔÀÓÈ¸»ç¿Í Ãâ½ÃÀÛµé 
+	// Ãâ·Â?
+	// °ÔÀÓÀ» ´õ ³ÖÀ» ¼ö ÀÖÀ»±î?
+
+	// Key Value : Key ¸¦ ±âÁØÀ¸·Î default Á¤·Ä 
+	// map ÀÇ µ¥ÀÌÅÍ¸¦ pair ·Î ¿«¾î¼­ Á¦°øÇÏµµ·Ï µÇ¾îÀÖ´Ù. 
+	map<String, list<String>> game{
+		{"ÆŞ ¾îºñ½º", {"°ËÀº»ç¸·", "ºÓÀº »ç¸·", "µµ±úºñ"}},
+		{"´ÑÅÙµµ", {"Á©´ÙÀÇ Àü¼³", "½´ÆÛ ¸¶¸®¿À", "¸¶¸®¿À Ä«µå", "½ºÅ¸Æø½º"}}
+	};
+
+	/// ¿ø¼Ò Ãß°¡ 
+	game.insert(pair < String, list<String>> { "µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}});
+	//game.insert(make_pair("µ¥ºê½Ã½ºÅÍÁî", {"ÄíÅ°·±¿Àºìºê·¹ÀÌÅ©"}) );  // ¼÷Á¦ µ¹¾Æ°¡°Ô ¸¸µé±â ( "µ¥ºê½Ã½ºÅÍÁö" string À¸·Î ³ª¿Ã ¼ö ÀÖ°Ô ¸¸µé±â 
+
+	///					map < È¸»ç (const) , °ÔÀÓ > - Key ´Â Á¤·ÄÀ» ÆÄ±«ÇÏ¸é ¾ÈµÇ¹Ç·Î constÀÌ´Ù
+	///				Node[µ¥ºê½Ã½º] -> [ ]  
+	///					¸¸¾à¿¡ key °ªÀ» ¹Ù²Ù°í ½Í´Ù¸é ? - ÀÌ ³ëµåÀÇ handleÀ» ¹Ş¾Æ¼­ ¹Ù²Û´Ù.  ( Extranct -> ¼öÁ¤ -> Áı¾î³Ö±â )
+	///
+	///				 ¢×				¢Ù
+	///			[´ÑÅÙµµ]	->[] ¡ê[]   [ÆŞ¾îºñ½º] -> [] ¡ê [] ¡ê []
+
+	/// ¸ÊÀÇ Å°°ªÀ» º¯°æÇÏ°í ½Í´Ù¸é extract ¸â¹ö¸¦ ÀÌ¿ëÇÑ´Ù. ( C++ 17 )
+	//auto Nodehandle = game.extract("´ÑÅÙµµ");
+	//Nodehandle.key() = "Nintendo";				/// ·¹ÆÛ·±½º¸¦ ¸®ÅÏÇÑ´Ù. 
+	//game.insert(std::move(Nodehandle));			/// std::move - static cast ÀÌ´Ù = static_cast<String&&>(Nodehandle) = std::move(Nodehandle)
+
+	/*
+		¹®Á¦ 
+			- ´ÑÅÙµµÀÇ "º°ÀÇ Ä¿ºñ"¸¦ Ãß°¡ÇÏ¶ó 
+	*/
+
+	//map<String, list<String>>::iterator iter = game.find("´ÑÅÙµµ");
+	//iter->second.push_back("º°ÀÇ Ä¿ºñ"); // ³ªÀÇ ÄÚµå 
+	//(iter->second).insert("º°ÀÇ Ä¿ºñ"); // ±³¼ö´Ô ÄÚµå 
+
+	///		int a[10];
+	///		a["´ÑÅÙµµ"] ¹è¿­À» ÀÎµ¦½º·Î ¼ıÀÚ°¡ ¾Æ´Ñ ´Ù¸¥ °ªÀ¸·Î ¾²´Â ¹è¿­À» 
+	///		' ¿¬°ü ¹è¿­ ' ÀÌ¶ó°í ÇÑ´Ù. - Associative Array 
+
+
+	/// ±³¼ö´ÔÀº operator[] À» ÀÌ¿ëÇÑ´Ù. 
+	String Key = "´ÑÅÙµµ";
+	list<String>& Value = game[Key]; /// => game.operator[]("´ÑÅÙµµ"); ¢¹ Å°°ªÀ» ÀÎµ¦½º·Î ÇØ¼­ °ªÀ» ¯´Â´Ù. 
+	Value.insert(Value.begin(), "º°ÀÇ Ä¿ºñ");
+
+	
+
+
+
+	// ±¸Á¶È­µÈ ¹ÙÀÎµù 
+	for (const auto& [È¸»ç, °ÔÀÓµé] : game) {
+		cout << È¸»ç << " - ";
+		for (const String& °ÔÀÓ : °ÔÀÓµé) {
+			cout << "\"" << °ÔÀÓ << "\" ";
+		}
+		cout << endl;
+	}
+
+	cout << "¸ÊÀÇ ¿ø¼Ò ¼ö - " << game.size() << endl;
+	MySaveFileCode::Save_File("12ÁÖÂ÷ ÀÚ·á/12ÁÖÂ÷_1.cpp", "12ÁÖÂ÷ ÀÚ·á/´ÑÅÙµµ¿¡ º°ÀÇÄ¿ºñ ³Ö±â (operator[]»ç¿ë).txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif

@@ -1,0 +1,279 @@
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	5/29 - 월 - 13즈 1일 동영상
+	6/6  - 화 - 14즈 2일 - 동영상
+	6/13 - 화 - 15주 2일 기말시험
+	6/20 - 월 - 성적게시 
+	
+*/
+
+int main()
+{
+	/// [ 문제 ] - "이상한 나라의 앨리스.txt" 에 사용된 문자와 사용된 횟수를 출력하라. 
+	
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+
+	map<int, char, greater<int>> testmap;
+
+
+	/// 파일 읽기 
+	char c;
+	while (in >> c) {
+		if (isalpha(c))
+		cimap[c]++;  /// c 라고 하는 문자가 키값으로 전달된다. -> Value(int) ++ 됨 
+	}
+
+	for (auto [문자, 개수] : cimap) {
+		testmap.insert(pair(개수, 문자));
+		//cout << 문자 << " - " << 개수 << endl;
+	}
+
+	for (auto [개수, 문자] : testmap) {
+		cout << 개수 << " - " << 문자 << endl;
+
+	}
+
+	/// 교수님 코드 
+	
+
+	MySaveFileCode::Save_File("12주차 자료/12주차_1.cpp", "12주차 자료/문제 오름차순으로 이상한나라앨리스문자 뽑기 - 교수님 코드.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	5/29 - 월 - 13즈 1일 동영상
+	6/6  - 화 - 14즈 2일 - 동영상
+	6/13 - 화 - 15주 2일 기말시험
+	6/20 - 월 - 성적게시 
+	
+*/
+
+int main()
+{
+	/// [ 문제 ] - "이상한 나라의 앨리스.txt" 에 사용된 문자와 사용된 횟수를 출력하라. 
+	
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in) exit(0);
+
+	map<char, int, greater<int>> cimap;
+
+	map<int, char, greater<int>> testmap;
+
+
+	/// 파일 읽기 
+	char c;
+	while (in >> c) {
+		if (isalpha(c))
+			cimap[c]++;  /// c 라고 하는 문자가 키값으로 전달된다. -> Value(int) ++ 됨 
+	}
+
+	for (auto [문자, 개수] : cimap) {
+		testmap.insert(pair(개수, 문자));
+		cout << 문자 << " - " << 개수 << endl;
+	}
+
+	for (auto [개수, 문자] : testmap) {
+		//cout << 개수 << " - " << 문자 << endl;
+
+	}
+
+	/// 교수님 코드 
+	
+
+	MySaveFileCode::Save_File("12주차 자료/12주차_1.cpp", "12주차 자료/문제 오름차순으로 이상한나라앨리스문자 뽑기 - 교수님 코드.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	5/29 - 월 - 13즈 1일 동영상
+	6/6  - 화 - 14즈 2일 - 동영상
+	6/13 - 화 - 15주 2일 기말시험
+	6/20 - 월 - 성적게시 
+	
+*/
+
+int main()
+{
+	/// [ 문제 ] - "이상한 나라의 앨리스.txt" 에 사용된 문자와 사용된 횟수를 출력하라. 
+	
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+	//map<int, char, greater<int>> testmap;
+
+
+	/// 파일 읽기 
+	char c;
+	while (in >> c) {
+		if (isalpha(c))
+			cimap[c]++;  /// c 라고 하는 문자가 키값으로 전달된다. -> Value(int) ++ 됨 
+	}
+
+	//for (auto [문자, 개수] : cimap) {
+	//	testmap.insert(pair(개수, 문자));
+	//	//cout << 문자 << " - " << 개수 << endl;
+	//}
+
+	//for (auto [개수, 문자] : testmap) {
+	//	cout << 개수 << " - " << 문자 << endl;
+
+	//}
+
+	/// 교수님 코드 
+	/// [ 문제 ] - 갯수가 많은 순서로 출력해 주세요 
+	vector<pair<char, int>> V{ cimap.begin(), cimap.end() };
+	sort(V.begin(), V.end(), [](const auto& lhs, const auto& rhs) {
+		return lhs.second > rhs.second;
+		});
+
+	for (auto [Char, Cnt] : V) {
+		cout << Cnt << " - " << Char << endl;
+	}
+
+	
+
+	MySaveFileCode::Save_File("12주차 자료/12주차_1.cpp", "12주차 자료/문제 오름차순으로 이상한나라앨리스문자 뽑기 - 교수님 코드.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif
+
+#define TWELVE
+#ifdef	TWELVE
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <random>
+#include <map>
+#include <list>
+#include <fstream>
+
+#include <utility>
+
+#include "../save.h"
+#include "../String.h"
+using namespace std;
+extern bool 관찰;
+
+/*
+	5/29 - 월 - 13즈 1일 동영상
+	6/6  - 화 - 14즈 2일 - 동영상
+	6/13 - 화 - 15주 2일 기말시험
+	6/20 - 월 - 성적게시 
+	
+*/
+
+int main()
+{
+	/// [ 문제 ] - "이상한 나라의 앨리스.txt" 에 사용된 문자와 사용된 횟수를 출력하라. 
+	
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (!in) exit(0);
+
+	map<char, int> cimap;
+	//map<int, char, greater<int>> testmap;
+
+
+	/// 파일 읽기 
+	char c;
+	while (in >> c) {
+		if (isalpha(c))
+			cimap[c]++;  /// c 라고 하는 문자가 키값으로 전달된다. -> Value(int) ++ 됨 
+	}
+
+	//for (auto [문자, 개수] : cimap) {
+	//	testmap.insert(pair(개수, 문자));
+	//	//cout << 문자 << " - " << 개수 << endl;
+	//}
+
+	//for (auto [개수, 문자] : testmap) {
+	//	cout << 개수 << " - " << 문자 << endl;
+
+	//}
+
+	/// 1. 교수님 코드 
+	/// [ 문제 ] - 갯수가 많은 순서로 출력해 주세요 
+	vector<pair<char, int>> V{ cimap.begin(), cimap.end() };
+	sort(V.begin(), V.end(), [](const auto& lhs, const auto& rhs) {
+		return lhs.second > rhs.second;
+		});
+
+	for (auto [Char, Cnt] : V) {
+		cout << Cnt << " - " << Char << endl;
+	}
+
+	/// 2. 교수님 코드 
+	multimap<int, char, greater<int>> icmap;
+	for (auto [Char, Cnt] : cimap) {
+		icmap.insert(make_pair(Cnt, Char));
+
+	}
+	
+	///  map 안에서 정렬이 안되니까
+	///  컨테이너를 옮겨서 정렬하는 발상의 전환을 해봤냐??
+
+
+	MySaveFileCode::Save_File("12주차 자료/12주차_1.cpp", "12주차 자료/문제 오름차순으로 이상한나라앨리스문자 뽑기 - 교수님 코드.txt");
+	MySaveFileCode::Save_File_Auto(12, 1);
+}
+
+#endif

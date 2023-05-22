@@ -135,6 +135,7 @@
     <ClCompile Include="10주차_2.cpp" />
     <ClCompile Include="11주차 자료\11주차_1.cpp" />
     <ClCompile Include="11주차 자료\11주차_2.cpp" />
+    <ClCompile Include="12주차 자료\12주차_1.cpp" />
     <ClCompile Include="5주차 자료\5주차_1.cpp" />
     <ClCompile Include="5주차 자료\5주차_2.cpp" />
     <ClCompile Include="6주차 자료\6주차_1.cpp" />
